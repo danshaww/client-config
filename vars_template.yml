@@ -1,5 +1,6 @@
 base:
   configure_known_hosts: false
+  enable_oh_my_posh: false
   username: ""
   git_name: ""
   git_email: ""
