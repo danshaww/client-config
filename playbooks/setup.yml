@@ -7,4 +7,5 @@
     - wsl_base
     - oh_my_posh
     - terraform
+    - just
   #  - docker
