@@ -1,0 +1,7 @@
+base:
+  configure_known_hosts: false
+  username: ""
+  git_name: ""
+  git_email: ""
+oh_my_posh:
+  theme: cobalt2

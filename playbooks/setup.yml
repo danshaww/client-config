@@ -1,0 +1,10 @@
+- name: Corporate WSL Configuration
+  hosts: localhost
+  connection: local
+  vars_files:
+    - ../vars.yml
+  roles:
+    - wsl_base
+    - oh_my_posh
+    - terraform
+  #  - docker
