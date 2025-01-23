@@ -13,12 +13,11 @@ sudo apt install ansible -y
 # Ansible roles clone/pull step.
 cd ..
 if [ -d "$repo" ]; then
-        cd $repo && git pull && cd ..
-    else
-        git clone $repourl
-    fi
-    ); done
-cd ansible-dev
+    cd $repo && git pull && cd ..
+else
+    git clone $repourl
+fi
+cd ansible-setup
 
 # Check for required vars file
 if [ ! -f vars.yml ]; then
