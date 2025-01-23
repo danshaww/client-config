@@ -3,8 +3,8 @@
 ### Ensure vars.yml is populated manually before running this script (excluded from git)
 
 # Vars
-repo="https://github.com/epichouse/ansible-roles"
-
+repourl="https://github.com/epichouse/ansible-roles"
+repo=$(basename "$repourl" .git)
 ### Ansible installation
 sudo apt-add-repository ppa:ansible/ansible
 sudo apt update
