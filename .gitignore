@@ -4,6 +4,5 @@
 temp/
 temp/*
 temp/*/*
-ansible.cfg
 
 vars.yml
