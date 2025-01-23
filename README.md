@@ -6,3 +6,5 @@ This repository contains a script, Ansible playbook and associated configuration
   
 To execute this script, you must first duplicate the vars_template.yml as vars.yml, and populate the vars found in the template with the appropriete values.  
   
+![Ansible]([https://assets.digitalocean.com/articles/alligator/boo.svg](https://ansible-doc-zh.readthedocs.io/zh/latest/_static/images/logo_invert.png)
+
