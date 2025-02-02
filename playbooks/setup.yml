@@ -14,3 +14,7 @@
       ansible.builtin.include_role:
         name: oh_my_posh
       when: base.enable_oh_my_posh
+    - name: AZ CLI Installation
+      ansible.builtin.include_role:
+        name: az_cli
+      when: base.enable_az_cli

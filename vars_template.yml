@@ -1,6 +1,7 @@
 base:
   configure_known_hosts: false
   enable_oh_my_posh: false
+  enable_az_cli: true
   username: ""
   git_name: ""
   git_email: ""
