@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   vars_files:
-    - ../vars.yml
+    - vars.yml
   tasks:
     - name: WSL Base Configuration
       ansible.builtin.include_role:

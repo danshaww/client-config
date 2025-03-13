@@ -1,4 +1,4 @@
-# Ansible Client Setup
+# Client Configuration Repository
   
 This repository contains a script, Ansible playbook and associated configuration to provision a WSL/Linux client to my liking.  
 
