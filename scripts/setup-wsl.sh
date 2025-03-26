@@ -6,6 +6,8 @@
 repourl="https://github.com/epichouse/ansible-roles"
 repo=$(basename "$repourl" .git)
 
+git pull
+
 # Check for required vars file
 if [ ! -f ansible/vars.yml ]; then
     printf "\033[0;31mvars.yml not found. Please duplicate vars_template.yml and populate vars before running\n"

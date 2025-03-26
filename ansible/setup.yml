@@ -7,9 +7,6 @@
     - name: WSL Base Configuration
       ansible.builtin.include_role:
         name: wsl_base
-    - name: Just Installation
-      ansible.builtin.include_role:
-        name: just
     - name: Oh My Posh Installation
       ansible.builtin.include_role:
         name: oh_my_posh
