@@ -3,7 +3,7 @@
 ### Ensure vars.yml is populated manually before running this script (excluded from git)
 
 # Vars
-repourl="https://github.com/epichouse/ansible-roles"
+repourl="https://github.com/danshaww/ansible-roles"
 repo=$(basename "$repourl" .git)
 
 git pull
