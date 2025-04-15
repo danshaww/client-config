@@ -1,0 +1,22 @@
+- name: Terraform - Install Dependancies
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - software-properties-common
+      - gnupg
+- name: Terraform - Add APT GPG Key
+  ansible.builtin.apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    keyring: /usr/share/keyrings/hashicorp-archive-keyring.gpg
+  become: true
+- name: Terraform - Add APT Repository
+  ansible.builtin.apt_repository:
+    repo: "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com jammy main"
+    state: present
+    filename: hashicorp
+  become: true
+  notify: Update APT Cache
+- name: Terraform - Install
+  become: true
+  ansible.builtin.apt:
+    pkg: terraform

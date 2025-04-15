@@ -1,0 +1,33 @@
+default:
+	just --list
+
+# List current dir using tree
+[no-cd]
+ls:
+	tree . -L 1
+# Set Power Mode to High Performance
+phigh:
+	powershell.exe 'powercfg /setactive SCHEME_MIN'
+# Set Power Mode to Balanced
+pmid:
+	powershell.exe 'powercfg /setactive SCHEME_BALANCED'
+# Set Power Mode to Power Saver
+plow:
+	powershell.exe 'powercfg /setactive SCHEME_MAX'
+# Get Power Mode
+pget:
+	powershell.exe 'powercfg /getactivescheme' && echo ""
+
+#Steam Locomotive!!!
+train:
+	sl
+
+# Git Commit
+[no-cd]
+gc:
+	git add . && git commit -a -m $MSG
+
+# Git Push
+[no-cd]
+gp:
+	git push

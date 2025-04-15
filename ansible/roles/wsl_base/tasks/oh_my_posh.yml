@@ -1,0 +1,31 @@
+- name: Check home bin dir
+  ansible.builtin.stat:
+    path: ~/bin
+  register: home_bin
+- name: Create home bin dir
+  ansible.builtin.file:
+    path: ~/bin
+    state: directory
+    mode: '0755'
+- name: Check for oh-my-posh
+  ansible.builtin.stat:
+    path: ~/bin/oh-my-posh
+  register: installed
+- name: Download oh-my-posh install script
+  ansible.builtin.get_url:
+    url: https://ohmyposh.dev/install.sh
+    dest: /tmp/install-oh-my-posh.sh
+    mode: '0755'
+  when: not installed.stat.exists
+- name: Install oh-my-posh
+  ansible.builtin.shell: bash -o pipefail /tmp/install-oh-my-posh.sh -d ~/bin && ~/bin/oh-my-posh font install meslo
+  when: not installed.stat.exists
+  register: installation
+- name: Install oh-my-posh font
+  ansible.builtin.shell: ~/bin/oh-my-posh font install meslo
+  when: installation.changed
+- name: Add script to home directory
+  ansible.builtin.copy:
+    content: "eval \"$(~/bin/oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/{{ oh_my_posh.theme }}.omp.json)\""
+    mode: '0755'
+    dest: ~/.oh_my_posh
