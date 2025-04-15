@@ -11,7 +11,7 @@ git pull
 # Check for required vars file
 if [ ! -f ansible/vars.yml ]; then
     printf "\033[0;31mvars.yml not found. vars_template.yml has been duplicated, populate vars before running this script again\n"
-    cp ansible/vars_template.yml ansible/vars.yml
+    cp ansible/.vars_template.yml ansible/vars.yml
     exit
 fi
 
