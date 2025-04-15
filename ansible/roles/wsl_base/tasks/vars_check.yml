@@ -1,0 +1,23 @@
+- name: Check for required variables
+  ansible.builtin.assert:
+    that:
+      - base.enable_oh_my_posh is defined
+      - base.enable_oh_my_posh != ""
+      - base.enable_az_cli is defined
+      - base.enable_az_cli != ""
+      - base.enable_docker is defined
+      - base.enable_docker != ""
+      - base.enable_terraform is defined
+      - base.enable_terraform != ""
+      - base.username is defined
+      - base.username != ""
+      - base.git_name is defined
+      - base.git_name != ""
+      - base.git_email is defined
+      - base.git_email != ""
+      - base.git_directory is defined
+      - base.git_directory != ""
+      - oh_my_posh.theme is defined
+      - oh_my_posh.theme != ""
+    fail_msg: "Please ensure all vars are populated in the vars.yml file."
+    success_msg: "All required vars defined, proceeding."

@@ -1,0 +1,45 @@
+- name: Allow sudo without password
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/sudoers.d/{{ base.username }}"
+    line: "{{ base.username }} ALL=(ALL) NOPASSWD:ALL"
+    create: true
+    mode: '0644'
+- name: Copy home directory files
+  ansible.builtin.copy:
+    src: home/
+    dest: ~/
+    mode: '0755'
+- name: Copy home directory files (root)
+  ansible.builtin.copy:
+    src: home/
+    dest: /root/
+    mode: '0755'
+  become: true
+- name: Copy Executables
+  ansible.builtin.copy:
+    src: bin/
+    dest: ~/bin/
+    mode: '0755'
+- name: Set Git user name
+  community.general.git_config:
+    name: user.name
+    scope: global
+    value: "{{ base.git_name }}"
+- name: Set Git user email
+  community.general.git_config:
+    name: user.email
+    scope: global
+    value: "{{ base.git_email }}"
+- name: Create Git Directory
+  ansible.builtin.file:
+    path: "{{ base.git_directory }}"
+    state: directory
+    mode: '0755'
+- name: Populate SSH Config (user)
+  ansible.builtin.lineinfile:
+    path: ~/.ssh/config
+    line: "{{ item }}"
+    mode: '0755'
+    create: true
+  with_items: "{{ ssh_config }}"
