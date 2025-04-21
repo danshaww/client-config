@@ -20,6 +20,7 @@ packages:
   - gh
   - xclip
   - just
+  - python3-passlib
 
 ssh_config:
   - "Host *"
