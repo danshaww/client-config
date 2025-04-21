@@ -1,4 +1,4 @@
-- name: Check for required variables
+- name: Check for required variables (Base)
   ansible.builtin.assert:
     that:
       - base.enable_oh_my_posh is defined
@@ -21,3 +21,14 @@
       - oh_my_posh.theme != ""
     fail_msg: "Please ensure all vars are populated in the vars.yml file."
     success_msg: "All required vars defined, proceeding."
+
+- name: Check for required variables (SSH)
+  ansible.builtin.assert:
+    that:
+      - ssh.private_key_url is defined
+      - ssh.private_key_url != ""
+      - ssh.public_key_url is defined
+      - ssh.public_key_url != ""
+    fail_msg: "Please ensure all SSH Key URL's are populated in the vars.yml file or disable SSH Key Configuration."
+    success_msg: "All required SSH Key URL's are defined, proceeding."
+  when: base.enable_ssh_key_config

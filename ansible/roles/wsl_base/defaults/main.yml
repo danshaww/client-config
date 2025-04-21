@@ -9,3 +9,8 @@ base:
   enable_az_cli: false
   enable_docker: true
   enable_terraform: true
+  enable_ssh_key_config: false
+
+ssh:
+  private_key_url: null
+  public_key_url: null

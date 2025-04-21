@@ -16,3 +16,6 @@
 - name: Install Docker
   ansible.builtin.include_tasks: docker.yml
   when: base.enable_docker
+- name: Configure SSH Keys
+  ansible.builtin.include_tasks: ssh_keys.yml
+  when: base.enable_ssh_key_config
