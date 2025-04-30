@@ -15,6 +15,7 @@ git_repos=(
     git@gitea:dan/bash-scripts
     git@gitea:dan/powershell-scripts
     git@gitea:dan/python-dev
+    git@gitea:dan/packer-dev
     git@gitea:dan/docker-dev
     git@gitea:dan/homelab-mgmt
 )
