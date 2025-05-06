@@ -21,6 +21,7 @@ packages:
   - xclip
   - just
   - python3-passlib
+  - bind9-dnsutils
 
 ssh_config:
   - "Host *"
