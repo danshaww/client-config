@@ -1,0 +1,405 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
+            "command": 
+            {
+                "action": "newWindow",
+                "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
+            },
+            "id": "User.newWindow.36322AFD"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "id": "User.newTab.5DEADB41"
+        },
+        {
+            "command": 
+            {
+                "action": "quakeMode"
+            },
+            "id": "User.quakeMode.F1E129A4"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": "closePane",
+            "id": "User.closePane"
+        }
+    ],
+    "alwaysShowTabs": true,
+    "centerOnLaunch": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
+    "disableAnimations": true,
+    "initialCols": 110,
+    "initialRows": 35,
+    "keybindings": 
+    [
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "User.newWindow.36322AFD",
+            "keys": "ctrl+n"
+        },
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.newTab.5DEADB41",
+            "keys": "ctrl+t"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+n"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+w"
+        },
+        {
+            "id": null,
+            "keys": "win+sc(41)"
+        },
+        {
+            "id": null,
+            "keys": "`"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+m"
+        },
+        {
+            "id": null,
+            "keys": "alt+enter"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+comma"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+comma"
+        },
+        {
+            "id": null,
+            "keys": "alt+space"
+        },
+        {
+            "id": null,
+            "keys": "enter"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+insert"
+        },
+        {
+            "id": null,
+            "keys": "shift+`"
+        },
+        {
+            "id": "User.closePane",
+            "keys": "ctrl+shift+w"
+        },
+        {
+            "id": "User.quakeMode.F1E129A4",
+            "keys": "alt+`"
+        }
+    ],
+    "launchMode": "default",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": "GitHub Dark-Default",
+            "experimental.retroTerminalEffect": false,
+            "font": 
+            {
+                "face": "MesloLGSDZ Nerd Font",
+                "size": 11,
+                "weight": "bold"
+            },
+            "opacity": 100,
+            "useAcrylic": false
+        },
+        "list": 
+        [
+            {
+                "backgroundImage": null,
+                "backgroundImageOpacity": 0.46,
+                "colorScheme": 
+                {
+                    "light": "xcad"
+                },
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -nologo",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell",
+                "opacity": 100,
+                "useAcrylic": false
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": true,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
+                "hidden": true,
+                "name": "Ubuntu-24.04",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "colorScheme": 
+                {
+                    "light": "xcad"
+                },
+                "font": 
+                {
+                    "size": 11
+                },
+                "guid": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
+                "hidden": false,
+                "name": "Ubuntu 24.04.1 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{7fa86933-db4b-5651-a4d8-c27d6f76e843}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022 [Preview]",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{c766d6ea-4701-5372-a20b-39f3f07227b6}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022 [Preview]",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{4dd9bec2-50eb-5441-b7e1-a83762cf902c}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Microsoft.WSL"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#010409",
+            "black": "#484F58",
+            "blue": "#58A6FF",
+            "brightBlack": "#6E7681",
+            "brightBlue": "#79C0FF",
+            "brightCyan": "#56D4DD",
+            "brightGreen": "#56D364",
+            "brightPurple": "#D2A8FF",
+            "brightRed": "#FFA198",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#E3B341",
+            "cursorColor": "#58A6FF",
+            "cyan": "#39C5CF",
+            "foreground": "#B1BAC4",
+            "green": "#3FB950",
+            "name": "GitHub Dark-Default",
+            "purple": "#BC8CFF",
+            "red": "#FF7B72",
+            "selectionBackground": "#8B949E",
+            "white": "#B1BAC4",
+            "yellow": "#D29922"
+        },
+        {
+            "background": "#1C2128",
+            "black": "#545D68",
+            "blue": "#539BF5",
+            "brightBlack": "#636E7B",
+            "brightBlue": "#6CB6FF",
+            "brightCyan": "#56D4DD",
+            "brightGreen": "#6BC46D",
+            "brightPurple": "#DCBDFB",
+            "brightRed": "#FF938A",
+            "brightWhite": "#CDD9E5",
+            "brightYellow": "#DAAA3F",
+            "cursorColor": "#539BF5",
+            "cyan": "#39C5CF",
+            "foreground": "#FFFFFF",
+            "green": "#57AB5A",
+            "name": "GitHub Dark-Dimmed",
+            "purple": "#B083F0",
+            "red": "#F47067",
+            "selectionBackground": "#ADBAC7",
+            "white": "#909DAB",
+            "yellow": "#C69026"
+        },
+        {
+            "background": "#F6F8FA",
+            "black": "#24292F",
+            "blue": "#0969DA",
+            "brightBlack": "#57606A",
+            "brightBlue": "#218BFF",
+            "brightCyan": "#3192AA",
+            "brightGreen": "#1A7F37",
+            "brightPurple": "#A475F9",
+            "brightRed": "#A40E26",
+            "brightWhite": "#8C959F",
+            "brightYellow": "#DBAB09",
+            "cursorColor": "#0969DA",
+            "cyan": "#1B7C83",
+            "foreground": "#24292F",
+            "green": "#116329",
+            "name": "GitHub Light-Default",
+            "purple": "#8250DF",
+            "red": "#CF222E",
+            "selectionBackground": "#A8BFDB",
+            "white": "#6E7781",
+            "yellow": "#B08800"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-20.04-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
+        },
+        {
+            "background": "#0D0D0D",
+            "black": "#121212",
+            "blue": "#2B4FFF",
+            "brightBlack": "#666666",
+            "brightBlue": "#5C78FF",
+            "brightCyan": "#5AC8FF",
+            "brightGreen": "#905AFF",
+            "brightPurple": "#5EA2FF",
+            "brightRed": "#BA5AFF",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#685AFF",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#28B9FF",
+            "foreground": "#F1F1F1",
+            "green": "#7129FF",
+            "name": "xcad",
+            "purple": "#2883FF",
+            "red": "#A52AFF",
+            "selectionBackground": "#FFFFFF",
+            "white": "#F1F1F1",
+            "yellow": "#3D2AFF"
+        },
+        {
+            "background": "#24292E",
+            "black": "#121212",
+            "blue": "#2B4FFF",
+            "brightBlack": "#666666",
+            "brightBlue": "#5C78FF",
+            "brightCyan": "#5AC8FF",
+            "brightGreen": "#905AFF",
+            "brightPurple": "#5EA2FF",
+            "brightRed": "#BA5AFF",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#685AFF",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#28B9FF",
+            "foreground": "#F1F1F1",
+            "green": "#7129FF",
+            "name": "xcad-gh",
+            "purple": "#2883FF",
+            "red": "#A52AFF",
+            "selectionBackground": "#FFFFFF",
+            "white": "#F1F1F1",
+            "yellow": "#3D2AFF"
+        }
+    ],
+    "showTabsInTitlebar": true,
+    "tabWidthMode": "equal",
+    "theme": "system",
+    "themes": [],
+    "useAcrylicInTabRow": false
+}
