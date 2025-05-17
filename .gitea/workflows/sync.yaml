@@ -1,0 +1,12 @@
+name: NAS Sync
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  deployment:
+    runs-on: london
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: RSYNC Data
+        run: rsync -avzogp . dan@ldnfsprd1.internal.epichouse.co.uk:/dpool/data/fs/client-config -r --chown root:users --rsync-path="sudo rsync"
