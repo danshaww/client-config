@@ -60,7 +60,7 @@ if [ "$color_prompt" = yes ]; then
     if [ "$(whoami)" == root ]; then
     PS1='\[\e[38;5;160;1m\][\u@\H:\w]\[\e[0m\] \[\e[1m\]\\$\[\e[0m\] '
     else
-    PS1='\[\e[38;5;199;1m\][\u@\H:\w]\[\e[0m\] \[\e[1m\]\\$\[\e[0m\] '
+    PS1='\[\e[38;5;247;1m\][\u@\H:\w]\[\e[0m\] \[\e[1m\]\\$\[\e[1m\] '
     fi
 else
     PS1='\u@\h:\w\$ '
