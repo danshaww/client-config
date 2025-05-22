@@ -1,4 +1,4 @@
-- name: Corporate WSL Configuration
+- name: WSL Configuration
   hosts: localhost
   connection: local
   vars_files:
