@@ -22,6 +22,7 @@ packages:
   - just
   - python3-passlib
   - bind9-dnsutils
+  - btop
 
 ssh_config:
   - "Host *"
