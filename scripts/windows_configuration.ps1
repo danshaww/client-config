@@ -3,19 +3,33 @@
 
 $packages = @(
     "Microsoft.Office",
+    "Microsoft.Powertoys",
+    "Microsoft.SQLServerManagementStudio.21",
+    "MartiCliment.UniGetUI",
+    "Oracle.MySQLWorkbench",
+    "MongoDB.Compass.Community",
     "Obsidian.Obsidian",
     "Doist.Todoist",
-    "HwMonitor"
+    "CPUID.HWMonitor",
+    "JanDeDobbeleer.OhMyPosh",
+    "KeePassXCTeam.KeePassXC",
+    "Spotify.Spotify"
 )
 # Set the execution policy to allow script execution
 #Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 
 # VS Code with context menu integration
-winget install Microsoft.VisualStudioCode --accept-package-agreements --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
+winget install Microsoft.VisualStudioCode --accept-source-agreements --accept-package-agreements --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
 
 # Other utilities
 foreach ($package in $packages) {
     Write-Output "Installing $package..."
     winget install --id $package --accept-source-agreements --accept-package-agreements
 }
+
+
+#PATH Reload for System & User
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
+oh-my-posh font install meslo

@@ -6,6 +6,8 @@ default:
 run:
 	scripts/setup-wsl.sh
 	scripts/repositories.sh
+	powershell.exe set-executionpolicy unrestricted -scope CurrentUser
+	powershell.exe scripts/windows_configuration.ps1
 
 # Run WSL provisioning script
 [no-cd]
@@ -16,3 +18,8 @@ wsl:
 [no-cd]
 git:
 	scripts/repositories.sh
+
+# Execute Windows Powershell script (via WSL)
+windows:
+	powershell.exe set-executionpolicy unrestricted -scope CurrentUser
+	powershell.exe scripts/windows_configuration.ps1
