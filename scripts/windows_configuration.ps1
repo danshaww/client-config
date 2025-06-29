@@ -13,7 +13,8 @@ $packages = @(
     "CPUID.HWMonitor",
     "JanDeDobbeleer.OhMyPosh",
     "KeePassXCTeam.KeePassXC",
-    "Spotify.Spotify"
+    "Spotify.Spotify",
+    "WinSCP.WinSCP"
 )
 # Set the execution policy to allow script execution
 #Set-ExecutionPolicy -ExecutionPolicy Unrestricted
