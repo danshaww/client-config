@@ -4,6 +4,10 @@
     "actions": 
     [
         {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
             "command": 
             {
                 "action": "splitPane",
@@ -13,16 +17,15 @@
             "id": "User.splitPane.A6751878"
         },
         {
-            "command": "find",
-            "id": "User.find"
+            "command": "paste",
+            "id": "User.paste"
         },
         {
             "command": 
             {
-                "action": "newWindow",
-                "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
+                "action": "quakeMode"
             },
-            "id": "User.newWindow.36322AFD"
+            "id": "User.quakeMode.F1E129A4"
         },
         {
             "command": 
@@ -34,13 +37,10 @@
         {
             "command": 
             {
-                "action": "quakeMode"
+                "action": "newWindow",
+                "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
             },
-            "id": "User.quakeMode.F1E129A4"
-        },
-        {
-            "command": "paste",
-            "id": "User.paste"
+            "id": "User.newWindow.36322AFD"
         },
         {
             "command": 
@@ -74,12 +74,12 @@
             "keys": "ctrl+n"
         },
         {
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
-        },
-        {
             "id": "User.newTab.5DEADB41",
             "keys": "ctrl+t"
+        },
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
         },
         {
             "id": null,
@@ -110,16 +110,16 @@
             "keys": "alt+enter"
         },
         {
-            "id": null,
-            "keys": "ctrl+comma"
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
         },
         {
             "id": "User.paste",
             "keys": "ctrl+v"
         },
         {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": null,
+            "keys": "ctrl+comma"
         },
         {
             "id": null,
@@ -161,7 +161,7 @@
     {
         "defaults": 
         {
-            "colorScheme": "GitHub Dark-Default",
+            "colorScheme": "Campbell Custom",
             "experimental.retroTerminalEffect": false,
             "font": 
             {
@@ -230,11 +230,46 @@
                 "hidden": false,
                 "name": "Ubuntu",
                 "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{2c6bb47f-0abb-56b8-9a47-0335f5e25836}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 21",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{caacf1db-e22d-530f-b447-50287b820db3}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 21",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
     "schemes": 
     [
+        {
+            "background": "#000000",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#CCCCCC",
+            "green": "#13A10E",
+            "name": "Campbell Custom",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
+        },
         {
             "background": "#010409",
             "black": "#484F58",
