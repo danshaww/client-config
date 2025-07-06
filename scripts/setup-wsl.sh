@@ -5,10 +5,19 @@
 git pull
 
 # Check for required vars file
-if [ ! -f ansible/vars.yml ]; then
-    printf "\033[0;31mvars.yml not found. vars_template.yml has been duplicated, populate vars before running this script again\n"
-    cp ansible/.vars_template.yml ansible/vars.yml
-    exit
+
+if [ ! -f ~/.config/client-config.yml ]; then
+    # Check for legacy vars.yml in ansible dir
+    if [ -f ansible/vars.yml ]; then
+        printf "\033[0;31mMigrating legacy vars to ~/.config/client-config.yml\n"
+        cp ansible/vars.yml ~/.config/client-config.yml
+        rm ansible/vars.yml
+    # Create config if not exists
+    else
+        printf "\033[0;31m~/.config/client-config.yml not found. vars_template.yml has been duplicated, populate vars before running this script again\n"
+        cp ansible/.vars_template.yml ~/.config/client-config.yml
+        exit
+    fi
 fi
 
 ### Ansible installation
