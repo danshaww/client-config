@@ -9,7 +9,7 @@ base:
   git_email: ""
   git_directory: "~/git/"
 oh_my_posh:
-  theme: powerlevel10k_lean
+  theme: illusi0n
 
 ssh:
   private_key_url: "https://files.internal.epichouse.co.uk/SSH/id_rsa"
