@@ -23,3 +23,7 @@ git:
 windows:
 	powershell.exe set-executionpolicy unrestricted -scope CurrentUser
 	powershell.exe scripts/windows_configuration.ps1
+
+# Update origin to Gitea
+set-origin:
+	git remote set-url origin git@gitea:dan/client-config
