@@ -1,14 +1,14 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
             "command": "find",
             "id": "User.find"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -21,21 +21,21 @@
             "id": "User.paste"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "quakeMode"
             },
             "id": "User.quakeMode.F1E129A4"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab"
             },
             "id": "User.newTab.5DEADB41"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newWindow",
                 "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
@@ -43,7 +43,7 @@
             "id": "User.newWindow.36322AFD"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -59,11 +59,11 @@
     "centerOnLaunch": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
+    "defaultProfile": "{d8314058-c7ee-476a-a88e-d41b2148f755}",
     "disableAnimations": true,
     "initialCols": 110,
     "initialRows": 35,
-    "keybindings": 
+    "keybindings":
     [
         {
             "id": "User.splitPane.A6751878",
@@ -151,19 +151,19 @@
         }
     ],
     "launchMode": "default",
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
-            "colorScheme": "Campbell Custom",
+            "colorScheme": "VS Code",
             "experimental.retroTerminalEffect": false,
-            "font": 
+            "font":
             {
                 "face": "MesloLGSDZ Nerd Font",
                 "size": 11,
@@ -172,12 +172,12 @@
             "opacity": 100,
             "useAcrylic": false
         },
-        "list": 
+        "list":
         [
             {
                 "backgroundImage": null,
                 "backgroundImageOpacity": 0.46,
-                "colorScheme": 
+                "colorScheme":
                 {
                     "light": "xcad"
                 },
@@ -194,81 +194,54 @@
                 "name": "Command Prompt"
             },
             {
-                "guid": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
-                "hidden": true,
-                "name": "Ubuntu-24.04",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "colorScheme": 
-                {
-                    "light": "xcad"
-                },
-                "font": 
-                {
-                    "size": 11
-                },
-                "guid": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
-                "hidden": false,
-                "name": "Ubuntu 24.04.1 LTS",
-                "source": "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
-            },
-            {
-                "guid": "{7fa86933-db4b-5651-a4d8-c27d6f76e843}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022 [Preview]",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{c766d6ea-4701-5372-a20b-39f3f07227b6}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022 [Preview]",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
                 "guid": "{4dd9bec2-50eb-5441-b7e1-a83762cf902c}",
                 "hidden": false,
                 "name": "Ubuntu",
                 "source": "Microsoft.WSL"
             },
             {
-                "guid": "{2c6bb47f-0abb-56b8-9a47-0335f5e25836}",
+                "colorScheme":
+                {
+                    "light": "xcad"
+                },
+                "commandline": "wsl.exe",
+                "cursorShape": "filledBox",
+                "font":
+                {
+                    "size": 11
+                },
+                "guid": "{d8314058-c7ee-476a-a88e-d41b2148f755}",
                 "hidden": false,
-                "name": "Developer Command Prompt for VS 21",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{caacf1db-e22d-530f-b447-50287b820db3}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 21",
-                "source": "Windows.Terminal.VisualStudio"
+                "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
+                "name": "WSL",
+                "startingDirectory": "~"
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
-            "background": "#000000",
-            "black": "#0C0C0C",
-            "blue": "#0037DA",
-            "brightBlack": "#767676",
-            "brightBlue": "#3B78FF",
-            "brightCyan": "#61D6D6",
-            "brightGreen": "#16C60C",
-            "brightPurple": "#B4009E",
-            "brightRed": "#E74856",
-            "brightWhite": "#F2F2F2",
-            "brightYellow": "#F9F1A5",
+            "background": "#030202",
+            "black": "#000000",
+            "blue": "#2472C8",
+            "brightBlack": "#666666",
+            "brightBlue": "#3B8EEA",
+            "brightCyan": "#29B8DB",
+            "brightGreen": "#23D18B",
+            "brightPurple": "#D670D6",
+            "brightRed": "#F14C4C",
+            "brightWhite": "#E5E5E5",
+            "brightYellow": "#F5F543",
             "cursorColor": "#FFFFFF",
-            "cyan": "#3A96DD",
+            "cyan": "#11A8CD",
             "foreground": "#CCCCCC",
-            "green": "#13A10E",
-            "name": "Campbell Custom",
-            "purple": "#881798",
-            "red": "#C50F1F",
+            "green": "#0DBC79",
+            "name": "VS Code",
+            "purple": "#BC3FBC",
+            "red": "#CD3131",
             "selectionBackground": "#FFFFFF",
-            "white": "#CCCCCC",
-            "yellow": "#C19C00"
+            "white": "#E5E5E5",
+            "yellow": "#E5E510"
         },
         {
             "background": "#010409",
