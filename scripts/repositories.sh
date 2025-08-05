@@ -3,7 +3,6 @@
 # Script to set up local repositories
 git_directory=~/git
 git_repos=(
-    git@gitea:dan/ansible-core
     git@gitea:dan/ansible-roles
     git@gitea:dan/ansible-dev
     git@gitea:dan/terraform-modules
@@ -18,6 +17,7 @@ git_repos=(
     git@gitea:dan/docker-dev
     git@gitea:dan/homelab-mgmt
     git@gitea:dan/homelab-docs
+    git@gitea:dan/homelab-config
 )
 
 
