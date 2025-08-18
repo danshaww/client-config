@@ -2,6 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -58,9 +62,9 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     if [ "$(whoami)" == root ]; then
-    PS1='\[\e[38;5;160;1m\][\u@\H:\w]\[\e[0m\] \[\e[1m\]\\$\[\e[0m\] '
+    PS1="\[\e[38;5;160;1m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
     else
-    PS1='\[\e[38;5;247;1m\][\u@\H:\w]\[\e[0m\] \[\e[1m\]\\$\[\e[1m\] '
+    PS1="\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
     fi
 else
     PS1='\u@\h:\w\$ '
