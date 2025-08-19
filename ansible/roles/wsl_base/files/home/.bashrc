@@ -64,7 +64,7 @@ if [ "$color_prompt" = yes ]; then
     if [ "$(whoami)" == root ]; then
     PS1="\[\e[38;5;160;1m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
     else
-    PS1="\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+    PS1="\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[33m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')\[\033[00m\] $ "
     fi
 else
     PS1='\u@\h:\w\$ '

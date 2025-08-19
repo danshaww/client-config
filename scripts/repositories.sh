@@ -16,7 +16,6 @@ git_repos=(
     git@gitea:dan/packer-dev
     git@gitea:dan/docker-dev
     git@gitea:dan/homelab-mgmt
-    git@gitea:dan/homelab-docs
     git@gitea:dan/homelab-config
 )
 
