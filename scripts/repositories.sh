@@ -5,6 +5,7 @@ git_directory=~/git
 git_repos=(
     git@gitea:dan/ansible-roles
     git@gitea:dan/ansible-dev
+    git@gitea:dan/ansible-dp
     git@gitea:dan/terraform-modules
     git@gitea:dan/terraform-deployment
     git@gitea:dan/client-config
@@ -16,7 +17,6 @@ git_repos=(
     git@gitea:dan/packer-dev
     git@gitea:dan/docker-dev
     git@gitea:dan/homelab-mgmt
-    git@gitea:dan/homelab-config
 )
 
 
