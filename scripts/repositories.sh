@@ -6,8 +6,7 @@ git_repos=(
     git@gitea:dan/ansible-roles
     git@gitea:dan/ansible-dev
     git@gitea:dan/ansible-dp
-    git@gitea:dan/terraform-modules
-    git@gitea:dan/terraform-deployment
+    git@gitea:dan/terraform-dev
     git@gitea:dan/client-config
     git@gitea:dan/software-licensing
     git@gitea:dan/code-snippets
