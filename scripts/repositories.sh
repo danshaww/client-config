@@ -5,7 +5,7 @@ git_directory=~/git
 git_repos=(
     git@gitea:dan/ansible-roles
     git@gitea:dan/ansible-dev
-    git@gitea:dan/ansible-dp
+    git@gitea:dan/ansible-core
     git@gitea:dan/terraform-dev
     git@gitea:dan/client-config
     git@gitea:dan/software-licensing
