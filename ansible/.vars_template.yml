@@ -8,6 +8,7 @@ base:
   git_name: ""
   git_email: ""
   git_directory: "~/git/"
+  git_repositories: []
 oh_my_posh:
   theme: cobalt2
 

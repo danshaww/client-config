@@ -5,6 +5,7 @@ base:
   git_name: ""
   git_email: ""
   git_directory: "~/git/"
+  git_repositories: []
   enable_oh_my_posh: false
   enable_az_cli: false
   enable_docker: true

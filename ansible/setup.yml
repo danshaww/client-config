@@ -3,5 +3,23 @@
   connection: local
   vars_files:
     - ~/.config/client-config.yml
+  vars:
+    git:
+      dir: ~/git/
+      repos:
+        - git@gitea:dan/ansible-roles
+        - git@gitea:dan/ansible-dev
+        - git@gitea:dan/ansible-core
+        - git@gitea:dan/terraform-dev
+        - git@gitea:dan/client-config
+        - git@gitea:dan/software-licensing
+        - git@gitea:dan/code-snippets
+        - git@gitea:dan/bash-scripts
+        - git@gitea:dan/powershell-scripts
+        - git@gitea:dan/python-dev
+        - git@gitea:dan/packer-dev
+        - git@gitea:dan/docker-dev
+
+
   roles:
     - name: wsl_base

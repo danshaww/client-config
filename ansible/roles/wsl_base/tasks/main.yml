@@ -19,3 +19,6 @@
 - name: Configure SSH Keys
   ansible.builtin.include_tasks: ssh_keys.yml
   when: base.enable_ssh_key_config
+- name: Clone required git repos
+  ansible.builtin.include_tasks: git_clone.yml
+  tags: git

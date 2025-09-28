@@ -20,6 +20,12 @@ if [ ! -f ~/.config/client-config.yml ]; then
     fi
 fi
 
+# Create symbolic link to client-config.yml
+if [ ! -f client-config.yml ]; then
+    # Check for legacy vars.yml in ansible dir
+    ln ~/.config/client-config.yml client-config.yml
+fi
+
 ### Ansible installation
 if ! which ansible > /dev/null; then
     sudo apt-add-repository ppa:ansible/ansible
