@@ -17,7 +17,7 @@ wsl:
 # Run Git provisioning script
 [no-cd]
 git:
-	ansible-playbook ansible/setup.yml --tags git
+	ansible-playbook ansible/playbook.yml --tags git
 
 # Execute Windows Powershell script (via WSL)
 windows:

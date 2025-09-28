@@ -35,5 +35,5 @@ fi
 
 # Execute Ansible Playbook
 cd ansible
-ansible-playbook setup.yml # --ask-become-pass
+ansible-playbook playbook.yml # --ask-become-pass
 cd ../
