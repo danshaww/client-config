@@ -133,6 +133,9 @@ alias q=exit
 alias of=onefetch
 alias j=just
 alias pbcopy="xclip -sel clip"
+alias gcm="git add . && git commit -am"
+alias gp="git push"
+
 
 export EDITOR='code --wait -r'
 export PATH=$PATH:$HOME/.tfenv/bin
