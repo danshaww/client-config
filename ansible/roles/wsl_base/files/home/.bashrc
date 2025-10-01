@@ -123,6 +123,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Aliases
 alias nf=neofetch
 alias powershell="powershell.exe"
 alias pwsh="powershell.exe"
@@ -134,6 +136,7 @@ alias of=onefetch
 alias j=just
 alias pbcopy="xclip -sel clip"
 
+# Custom Functions
 gcm() {
     #git commit function
     git add .
