@@ -141,6 +141,11 @@ gcm() {
     git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
 
+gnb() {
+    #git new branch function
+    git branch "$1"
+    git switch "$1"
+}
 
 export EDITOR='code --wait -r'
 export PATH=$PATH:$HOME/.tfenv/bin
