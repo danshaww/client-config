@@ -138,7 +138,7 @@ gcm() {
     #git commit function
     git add .
     git commit -am "$1"
-    git push
+    git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
 
 
