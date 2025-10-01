@@ -135,6 +135,7 @@ alias q=exit
 alias of=onefetch
 alias j=just
 alias pbcopy="xclip -sel clip"
+alias g="git status"
 
 # Custom Functions
 gcm() {
