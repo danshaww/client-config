@@ -19,6 +19,11 @@ wsl:
 git:
 	ansible-playbook ansible/playbook.yml --tags git
 
+# Clone/Pull ADO Repos
+[no-cd]
+ado:
+	scripts/devops_repositories.sh
+
 # Execute Windows Powershell script (via WSL)
 windows:
 	powershell.exe set-executionpolicy unrestricted -scope CurrentUser
