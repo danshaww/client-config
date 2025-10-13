@@ -31,6 +31,11 @@
     name: user.email
     scope: global
     value: "{{ base.git_email }}"
+- name: Set Git Credential Helper
+  community.general.git_config:
+    name: credential.helper
+    scope: global
+    value: store
 - name: Create Git Directory
   ansible.builtin.file:
     path: "{{ base.git_directory }}"
