@@ -17,7 +17,7 @@ wsl:
 # Run Git provisioning script
 [no-cd]
 git:
-	ansible-playbook ansible/playbook.yml --tags git
+	ansible-playbook ansible/git.yml
 
 # Clone/Pull ADO Repos
 [no-cd]

@@ -1,0 +1,31 @@
+- name: WSL Configuration
+  hosts: localhost
+  connection: local
+  vars_files:
+    - ~/.config/client-config.yml
+  vars:
+    git_directory: "~/git/"
+    git_repositories:
+      - https://gitea.internal.epichouse.co.uk/dan/ansible-roles
+      - https://gitea.internal.epichouse.co.uk/dan/ansible-dev
+      - https://gitea.internal.epichouse.co.uk/dan/ansible-core
+      - https://gitea.internal.epichouse.co.uk/dan/ansible-vault
+      - https://gitea.internal.epichouse.co.uk/dan/terraform-dev
+      - https://gitea.internal.epichouse.co.uk/dan/client-config
+      - https://gitea.internal.epichouse.co.uk/dan/software-licensing
+      - https://gitea.internal.epichouse.co.uk/dan/code-snippets
+      - https://gitea.internal.epichouse.co.uk/dan/bash-scripts
+      - https://gitea.internal.epichouse.co.uk/dan/powershell-scripts
+      - https://gitea.internal.epichouse.co.uk/dan/python-dev
+      - https://gitea.internal.epichouse.co.uk/dan/packer-dev
+      - https://gitea.internal.epichouse.co.uk/dan/docker-dev
+  tasks:
+    - name: Clone Required Git Repositories
+      ansible.builtin.git:
+        repo: "{{ item }}"
+        dest: "{{ git_directory }}/{{ item | basename }}"
+        update: true
+      with_items: "{{ git_repositories }}"
+      async: 60
+      poll: 0
+      changed_when: false
