@@ -17,7 +17,7 @@ wsl:
 # Run Git provisioning script
 [no-cd]
 git:
-	ansible-playbook ansible/git.yml
+	scripts/gitea_repositories.sh
 
 # Clone/Pull ADO Repos
 [no-cd]
