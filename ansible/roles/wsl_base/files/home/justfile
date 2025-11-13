@@ -18,20 +18,10 @@ plow:
 pget:
 	powershell.exe 'powercfg /getactivescheme' && echo ""
 
-#Steam Locomotive!!!
-train:
-	sl
+#git
+git:
+	cd ~/git/client-config && ./scripts/gitea_repositories.sh
 
-# Git Commit
-[no-cd]
-gc:
-	git add . && git commit -a -m $MSG
-
-# Git Push
-[no-cd]
-gp:
-	git push
-
-# Output my DNS zone contents via VS Code
-dns:
-	ssh dan@ldndnsprd1 "sudo rndc dumpdb -zones && sleep 5 && sudo cat /var/cache/bind/named_dump.db" > dumpfile.zone && code dumpfile.zone
+#wsl
+wsl:
+	cd ~/git/client-config && ./scripts/setup_wsl.sh

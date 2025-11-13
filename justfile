@@ -12,7 +12,7 @@ run:
 # Run WSL provisioning script
 [no-cd]
 wsl:
-	scripts/setup-wsl.sh
+	scripts/setup_wsl.sh
 
 # Run Git provisioning script
 [no-cd]

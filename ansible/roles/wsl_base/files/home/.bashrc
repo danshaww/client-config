@@ -136,8 +136,16 @@ gcm() {
 
 gnb() {
     #git new branch function
+    git switch main
+    git pull
     git branch "$1"
     git switch "$1"
+}
+
+gmb() {
+    #git switch main function
+    git switch main
+    git pull
 }
 
 parse_git_branch() {

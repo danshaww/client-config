@@ -4,8 +4,8 @@
     pkg: "{{ packages }}"
     update_cache: true
   when: ansible_os_family == "Debian"
-- name: Package Updates
-  become: true
-  ansible.builtin.apt:
-    upgrade: true
-  when: ansible_os_family == "Debian"
+# - name: Package Updates
+#   become: true
+#   ansible.builtin.apt:
+#     upgrade: true
+#   when: ansible_os_family == "Debian"
