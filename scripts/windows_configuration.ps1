@@ -15,7 +15,8 @@ $packages = @(
     "KeePassXCTeam.KeePassXC",
     "Spotify.Spotify",
     "WinSCP.WinSCP",
-    "Git.Git"
+    "Git.Git",
+    "Gitea.tea"
 )
 # Set the execution policy to allow script execution
 #Set-ExecutionPolicy -ExecutionPolicy Unrestricted
@@ -40,4 +41,7 @@ oh-my-posh font install meslo
 git config --global user.name dan
 git config --global user.email "danshaw509@gmail.com"
 git config --global credential.helper store
-New-Item -Path "~\" -Name "Git" -ItemType "Directory"
+
+if (-not (Test-Path "~\Git" )) {
+    New-Item -Path "~\Git" -ItemType "Directory"
+}
