@@ -1,3 +1,5 @@
+set shell := ["powershell.exe", "-c"]
+
 default:
 	just --list
 
@@ -10,14 +12,16 @@ run:
 	powershell.exe scripts/windows_configuration.ps1
 
 # Run WSL provisioning script
-[no-cd]
+# [no-cd]
 wsl:
-	scripts/setup_wsl.sh
+	dos2unix scripts/setup_wsl.sh
+	wsl scripts/setup_wsl.sh
 
 # Run Git provisioning script
 [no-cd]
 git:
-	scripts/gitea_repositories.sh
+	scripts/windows_repositories.ps1
+# scripts/gitea_repositories.sh
 
 # Clone/Pull ADO Repos
 [no-cd]
@@ -26,9 +30,8 @@ ado:
 
 # Execute Windows Powershell script (via WSL)
 windows:
-	powershell.exe set-executionpolicy unrestricted -scope CurrentUser
-	powershell.exe scripts/windows_configuration.ps1
+	scripts/windows_configuration.ps1
 
 # Update origin to Gitea
 set-origin:
-	git remote set-url origin git@gitea:dan/client-config
+	git remote set-url origin https://gitea.internal.epichouse.co.uk/dan/client-config

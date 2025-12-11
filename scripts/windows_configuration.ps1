@@ -16,7 +16,9 @@ $packages = @(
     "Spotify.Spotify",
     "WinSCP.WinSCP",
     "Git.Git",
-    "Gitea.tea"
+    "Gitea.tea",
+    "Casey.Just",
+    "waterlan.dos2unix"
 )
 # Set the execution policy to allow script execution
 #Set-ExecutionPolicy -ExecutionPolicy Unrestricted
