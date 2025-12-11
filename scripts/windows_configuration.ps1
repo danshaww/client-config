@@ -14,7 +14,8 @@ $packages = @(
     "JanDeDobbeleer.OhMyPosh",
     "KeePassXCTeam.KeePassXC",
     "Spotify.Spotify",
-    "WinSCP.WinSCP"
+    "WinSCP.WinSCP",
+    "Git.Git"
 )
 # Set the execution policy to allow script execution
 #Set-ExecutionPolicy -ExecutionPolicy Unrestricted
@@ -34,3 +35,9 @@ foreach ($package in $packages) {
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 oh-my-posh font install meslo
+
+# Git Configuration
+git config --global user.name dan
+git config --global user.email "danshaw509@gmail.com"
+git config --global credential.helper store
+New-Item -Path "~\" -Name "Git" -ItemType "Directory"

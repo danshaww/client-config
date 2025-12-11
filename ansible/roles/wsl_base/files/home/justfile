@@ -25,3 +25,9 @@ git:
 #wsl
 wsl:
 	cd ~/git/client-config && ./scripts/setup_wsl.sh
+
+# Output my DNS zone contents via VS Code
+dns:
+	ssh dan@ldndnsprd1 "sudo rndc dumpdb -zones && sleep 5 && sudo cat /var/cache/bind/named_dump.db" > dumpfile.zone
+	sed -i '/^;/d' dumpfile.zone
+	code dumpfile.zone
