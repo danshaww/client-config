@@ -1,6 +1,5 @@
 packages:
   - git
-  - neofetch
   - stress
   - fio
   - gnupg
