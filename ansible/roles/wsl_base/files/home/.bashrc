@@ -130,7 +130,7 @@ alias gu="~/git/client-config/scripts/gitea_repositories.sh"
 gcm() {
     #git commit function
     git add .
-    git commit -am "$1"
+    git commit -am "$*"
     git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
 
