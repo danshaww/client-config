@@ -155,3 +155,5 @@ parse_git_branch() {
 export EDITOR='code --wait -r'
 export PATH=$PATH:$HOME/.tfenv/bin
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault
+
+eval "$(starship init bash)"
