@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script to set up local repositories from Gitea instance
-git_directory=~/git
+git_directory=~/git/gitea
 git_repos=$(tea repo -f url -o simple)
 
 blue="\033[0;34m"
@@ -9,6 +9,11 @@ white="\033[0m"
 
 # Welcome Message
 printf "${blue}\nWelcome to Dan's Git Repo Cloning Utility\n\nAll repositories listed in the script will be cloned/updated\n\n${white}"
+
+# Create specified Git Root Path
+if [ -d "$path" ]; then
+    mkdir $path
+fi
 
 # Check for tea cli login
 if command_output=$(tea login) && echo "$command_output" | grep -q "https"; then
