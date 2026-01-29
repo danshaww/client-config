@@ -1,7 +1,6 @@
 # Bash script to install Ansible, clone other required repositories and execute Ansible WSL playbook.
 
-### Ensure ~/.config/client-config.yml is populated manually before running this script (excluded from git)
-
+echo "Pulling changes before execution"
 git pull
 
 # Check for required vars file
