@@ -1,6 +1,6 @@
 name: NAS Sync
 on:
-  push:
+  # push:
   workflow_dispatch:
 jobs:
   deployment:
