@@ -1,21 +1,32 @@
 - name: Vars Check
   ansible.builtin.include_tasks: vars_check.yml
+
 - name: Install Base Packages
   ansible.builtin.include_tasks: package_installation.yml
+
 - name: Configure User
   ansible.builtin.include_tasks: user_config.yml
-- name: Install & Configure oh-my-posh
-  ansible.builtin.include_tasks: oh_my_posh.yml
-  when: base.enable_oh_my_posh
-- name: Install Azure CLI
-  ansible.builtin.include_tasks: az_cli.yml
-  when: base.enable_az_cli
-- name: Install Terraform
-  ansible.builtin.include_tasks: terraform.yml
-  when: base.enable_terraform
-- name: Install Docker
-  ansible.builtin.include_tasks: docker.yml
-  when: base.enable_docker
+
 - name: Configure SSH Keys
   ansible.builtin.include_tasks: ssh_keys.yml
   when: base.enable_ssh_key_config
+
+- name: Configure Starship
+  ansible.builtin.include_tasks: utils/starship.yml
+  when: configure_starship
+
+- name: Install & Configure oh-my-posh
+  ansible.builtin.include_tasks: utils/oh_my_posh.yml
+  when: base.enable_oh_my_posh
+
+- name: Install Azure CLI
+  ansible.builtin.include_tasks: utils/azure_cli.yml
+  when: base.enable_az_cli
+
+- name: Install Terraform
+  ansible.builtin.include_tasks: utils/terraform.yml
+  when: base.enable_terraform
+
+- name: Install Docker
+  ansible.builtin.include_tasks: utils/docker.yml
+  when: base.enable_docker

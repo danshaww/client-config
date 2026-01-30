@@ -15,6 +15,7 @@ if [ ! -f ~/.config/client-config.yml ]; then
     else
         printf "\033[0;31m~/.config/client-config.yml not found. vars_template.yml has been duplicated, populate vars before running this script again\n"
         cp ansible/.vars_template.yml ~/.config/client-config.yml
+        ln ~/.config/client-config.yml client-config.yml
         exit
     fi
 fi

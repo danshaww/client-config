@@ -1,14 +1,16 @@
-- name: Check for executable
+- name: Azure CLI | Check for executable
   ansible.builtin.stat:
     path: /usr/bin/az
   register: az_installed
-- name: Download AZ CLI installer
+
+- name: Azure CLI | Download AZ CLI installer
   ansible.builtin.get_url:
     url: https://aka.ms/InstallAzureCLIDeb
     dest: /tmp/InstallAzureCLIDeb.sh
     mode: '0755'
   when: not az_installed.stat.exists
-- name: Run AZ CLI installer
+
+- name: Azure CLI | Run Installation
   ansible.builtin.command: bash /tmp/InstallAzureCLIDeb.sh
   become: true
   changed_when: not az_installed.stat.exists

@@ -1,0 +1,4 @@
+- name: Starship | Install
+  ansible.builtin.shell: curl -sS https://starship.rs/install.sh | sh -s -- -y
+  changed_when: false
+  become: true

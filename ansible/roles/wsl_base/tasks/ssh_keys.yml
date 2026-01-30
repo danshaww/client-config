@@ -1,4 +1,4 @@
-- name: SSH | Create Directory
+- name: SSH | Create Directories
   ansible.builtin.file:
     path: "{{ item.dir }}/.ssh"
     state: directory
@@ -11,6 +11,7 @@
     - user: "root"
       dir: "/root"
   become: true
+
 - name: SSH | Download Private Key
   ansible.builtin.get_url:
     url: "{{ item.url }}"
@@ -26,6 +27,7 @@
       dir: "/root"
       url: "{{ ssh.private_key_url }}"
   become: true
+
 - name: SSH | Download Public Key
   ansible.builtin.get_url:
     url: "{{ item.url }}"

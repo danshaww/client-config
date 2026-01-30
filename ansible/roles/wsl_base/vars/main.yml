@@ -1,27 +1,28 @@
 packages:
-  - git
-  - stress
-  - fio
-  - gnupg
-  - curl
-  - ca-certificates
-  - unzip
-  - htop
-  - git
-  - net-tools
-  - nfs-common
-  - cifs-utils
-  - rsync
-  - tmux
   - ansible-lint
-  - sl
-  - tree
-  - gh
-  - xclip
-  - just
-  - python3-passlib
   - bind9-dnsutils
   - btop
+  - ca-certificates
+  - cifs-utils
+  - curl
+  - fio
+  - gh
+  - git
+  - git
+  - gnupg
+  - htop
+  - just
+  - net-tools
+  - nfs-common
+  - python3-passlib
+  - rsync
+  - sl
+  - software-properties-common
+  - stress
+  - tmux
+  - tree
+  - unzip
+  - xclip
 
 ssh_config:
   - "Host *"

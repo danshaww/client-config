@@ -1,5 +1,6 @@
 base:
   enable_oh_my_posh: false
+  enable_starship: true
   enable_az_cli: true
   enable_docker: true
   enable_terraform: true
