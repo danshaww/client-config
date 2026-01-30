@@ -1,6 +1,7 @@
 - name: Install Starship
-  ansible.builtin.shell: curl -sS https://starship.rs/install.sh | sh -s -- -y -b ~/.local/bin
+  ansible.builtin.shell: curl -sS https://starship.rs/install.sh | sh -s -- -y
   changed_when: false
+  become: true
 - name: Allow sudo without password
   become: true
   ansible.builtin.lineinfile:
