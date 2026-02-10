@@ -14,5 +14,5 @@ oh_my_posh:
   theme: cobalt2
 
 ssh:
-  private_key_url: "https://files.internal.epichouse.co.uk/SSH/id_rsa"
-  public_key_url: "https://files.internal.epichouse.co.uk/SSH/id_rsa.pub"
+  private_key_url: "https://files.epichouse.co.uk/SSH/id_rsa"
+  public_key_url: "https://files.epichouse.co.uk/SSH/id_rsa.pub"

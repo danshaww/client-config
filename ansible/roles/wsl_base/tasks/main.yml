@@ -13,7 +13,7 @@
 
 - name: Configure Starship
   ansible.builtin.include_tasks: utils/starship.yml
-  when: configure_starship
+  when: base.enable_starship
 
 - name: Install & Configure oh-my-posh
   ansible.builtin.include_tasks: utils/oh_my_posh.yml
