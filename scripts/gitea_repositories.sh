@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script to set up local repositories from Gitea instance
-git_directory=~/git/gitea
+git_directory=~/git
 git_repos=$(tea repo -f url -o simple)
 
 blue="\033[0;34m"
