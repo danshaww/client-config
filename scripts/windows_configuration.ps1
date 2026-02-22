@@ -25,9 +25,11 @@ foreach ($package in $packages) {
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 # Git Configuration
-git config --global user.name dan
-git config --global user.email "danshaw509@gmail.com"
 git config --global credential.helper store
+# git config --global core.autocrlf false
+# git config --global core.text eol=lf
+# git config --global core.eol = lf
+
 
 if (-not (Test-Path "~\Git" )) {
     New-Item -Path "~\Git" -ItemType "Directory"
