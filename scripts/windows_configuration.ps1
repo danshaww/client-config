@@ -24,8 +24,8 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 # Git Configuration
 git config --global credential.helper store
 git config --global core.autocrlf false
-# git config --global core.text eol=lf
-# git config --global core.eol = lf
+
+# Personal Device Specific Configuration
 if ($env:USERNAME -eq "dan") {
     git config --global user.name "Dan"
     git config --global user.email "danshaw509@gmail.com"
@@ -35,6 +35,6 @@ if (-not (Test-Path "~\Git" )) {
     New-Item -Path "~\Git" -ItemType "Directory"
 }
 
-copy-Item files/powershell_profile.ps1 $PROFILE -Force
+copy-Item scripts/files/powershell_profile.ps1 $PROFILE -Force
 
 . $PROFILE
