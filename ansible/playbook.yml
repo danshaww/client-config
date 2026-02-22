@@ -4,4 +4,4 @@
   vars_files:
     - ~/.config/client-config.yml
   roles:
-    - name: wsl_base
+    - role: wsl_base
