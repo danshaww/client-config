@@ -27,7 +27,7 @@ Register-ArgumentCompleter -CommandName ssh,scp,sftp -Native -ScriptBlock {
 }
 
 Invoke-Expression (& 'C:\Program Files\starship\bin\starship.exe' init powershell --print-full-init | Out-String)
-Remove-Item Alias:gcm -Force
+Remove-Item Alias:gcm -Force -ErrorAction SilentlyContinue
 
 # Git Commit Function
 function gcm {
@@ -61,3 +61,33 @@ function gmb {
     git switch main
     git pull
 }
+# Git Status
+function gs {
+    git status
+}
+
+# Quit Function
+function q {
+    exit
+}
+
+function phigh {
+    powercfg.exe /setactive SCHEME_MIN
+}
+
+function pmid {
+    powercfg.exe /setactive SCHEME_BALANCED
+}
+
+function plow {
+    powercfg.exe /setactive SCHEME_MAX
+}
+
+function pget {
+    powercfg.exe /getactivescheme
+}
+
+# General Aliases
+Set-Alias -Name c -Value clear
+Set-Alias -Name j -Value just
+Set-Alias -Name ll -Value ls
