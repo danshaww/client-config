@@ -5,7 +5,6 @@ default:
 
 # Run WSL provisioning script
 wsl:
-	dos2unix scripts/setup_wsl.sh
 	wsl scripts/setup_wsl.sh
 
 # Run Git provisioning script
