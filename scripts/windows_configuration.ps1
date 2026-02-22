@@ -30,7 +30,10 @@ git config --global credential.helper store
 # git config --global core.autocrlf false
 # git config --global core.text eol=lf
 # git config --global core.eol = lf
-
+if ($env:USERNAME -eq "dan") {
+    git config --global user.name "Dan"
+    git config --global user.email "danshaw509@gmail.com"
+}
 
 if (-not (Test-Path "~\Git" )) {
     New-Item -Path "~\Git" -ItemType "Directory"
