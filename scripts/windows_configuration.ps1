@@ -1,5 +1,4 @@
-# Script to make initial configuration changes to a Windows system & install software
-
+# Windows Development Configuration Script
 
 $packages = @(
     "Git.Git",
@@ -8,9 +7,6 @@ $packages = @(
     "waterlan.dos2unix",
     "DEVCOM.JetBrainsMonoNerdFont"
 )
-# Set the execution policy to allow script execution
-#Set-ExecutionPolicy -ExecutionPolicy Unrestricted
-
 
 # VS Code with context menu integration
 winget install Microsoft.VisualStudioCode --accept-source-agreements --accept-package-agreements --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
@@ -31,10 +27,13 @@ if ($env:USERNAME -eq "dan") {
     git config --global user.email "danshaw509@gmail.com"
 }
 
+# Create Git Repository Dir
 if (-not (Test-Path "~\Git" )) {
     New-Item -Path "~\Git" -ItemType "Directory"
 }
 
+# Copy Powershell Profile
 copy-Item scripts/files/powershell_profile.ps1 $PROFILE -Force
 
+# End - Re-Evaluate Powershell Profile
 . $PROFILE
