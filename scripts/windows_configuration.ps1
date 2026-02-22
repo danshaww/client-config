@@ -23,7 +23,7 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 
 # Git Configuration
 git config --global credential.helper store
-# git config --global core.autocrlf false
+git config --global core.autocrlf false
 # git config --global core.text eol=lf
 # git config --global core.eol = lf
 if ($env:USERNAME -eq "dan") {
