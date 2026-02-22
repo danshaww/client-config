@@ -14,26 +14,18 @@ $git_repos= @(
     "docker-dev",
     "documentation",
     "homelab",
-    "homelab-dns",
-    "homelab-docker",
-    "homelab-general",
-    "homelab-global",
-    "homelab-mgmt",
-    "homelab-monitoring",
     "packer-dev",
     "powershell-scripts",
     "python-dev",
     "software-licensing",
-    "terraform-dev",
-    "terraform-modules",
-    "web"
+    "terraform-dev"
 )
 
 cd $git_directory
 foreach ($repo in $git_repos) {
 
     if (-not (Test-Path "$repo" )) {
-        git clone https://gitea.internal.epichouse.co.uk/dan/$repo
+        git clone https://gitea.epichouse.co.uk/dan/$repo
     }
     else {
         cd $repo

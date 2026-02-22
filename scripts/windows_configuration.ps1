@@ -2,19 +2,6 @@
 
 
 $packages = @(
-    "Microsoft.Office",
-    "Microsoft.Powertoys",
-    "Microsoft.SQLServerManagementStudio.21",
-    "MartiCliment.UniGetUI",
-    "Oracle.MySQLWorkbench",
-    "MongoDB.Compass.Community",
-    "Obsidian.Obsidian",
-    "Doist.Todoist",
-    "CPUID.HWMonitor",
-    "JanDeDobbeleer.OhMyPosh",
-    "KeePassXCTeam.KeePassXC",
-    "Spotify.Spotify",
-    "WinSCP.WinSCP",
     "Git.Git",
     "Gitea.tea",
     "Casey.Just",
@@ -36,8 +23,6 @@ foreach ($package in $packages) {
 
 #PATH Reload for System & User
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-
-oh-my-posh font install meslo
 
 # Git Configuration
 git config --global user.name dan
