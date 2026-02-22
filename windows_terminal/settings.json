@@ -1,14 +1,14 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
             "command": "find",
             "id": "User.find"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -21,21 +21,21 @@
             "id": "User.paste"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "quakeMode"
             },
             "id": "User.quakeMode.F1E129A4"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "newTab"
             },
             "id": "User.newTab.5DEADB41"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "newWindow",
                 "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
@@ -43,7 +43,7 @@
             "id": "User.newWindow.36322AFD"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "copy",
                 "singleLine": false
@@ -59,11 +59,11 @@
     "centerOnLaunch": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{d8314058-c7ee-476a-a88e-d41b2148f755}",
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "disableAnimations": true,
     "initialCols": 110,
     "initialRows": 35,
-    "keybindings":
+    "keybindings": 
     [
         {
             "id": "User.splitPane.A6751878",
@@ -144,44 +144,39 @@
         {
             "id": "User.closePane",
             "keys": "ctrl+shift+w"
-        },
-        {
-            "id": "User.quakeMode.F1E129A4",
-            "keys": "alt+`"
         }
     ],
     "launchMode": "default",
-    "newTabMenu":
+    "newTabMenu": 
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
             "colorScheme": "VS Code",
             "experimental.retroTerminalEffect": false,
-            "font":
+            "font": 
             {
-                "face": "MesloLGSDZ Nerd Font",
+                "face": "JetBrainsMono Nerd Font",
                 "size": 11,
                 "weight": "bold"
             },
             "opacity": 100,
             "useAcrylic": false
         },
-        "list":
+        "list": 
         [
             {
                 "backgroundImage": null,
                 "backgroundImageOpacity": 0.46,
-                "colorScheme":
+                "colorScheme": 
                 {
                     "light": "xcad"
                 },
-                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -nologo",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell",
@@ -189,8 +184,32 @@
                 "useAcrylic": false
             },
             {
+                "altGrAliasing": true,
+                "antialiasingMode": "grayscale",
+                "backgroundImage": null,
+                "backgroundImageOpacity": 0.46,
+                "closeOnExit": "automatic",
+                "colorScheme": 
+                {
+                    "light": "xcad"
+                },
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "cursorShape": "bar",
+                "elevate": true,
+                "guid": "{f01969df-050e-4959-878f-b26ee47b581c}",
+                "hidden": false,
+                "historySize": 9001,
+                "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
+                "name": "Windows PowerShell (Administrator)",
+                "opacity": 100,
+                "padding": "8, 8, 8, 8",
+                "snapOnInput": true,
+                "startingDirectory": "%USERPROFILE%",
+                "useAcrylic": false
+            },
+            {
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": true,
+                "hidden": false,
                 "name": "Command Prompt"
             },
             {
@@ -200,16 +219,12 @@
                 "source": "Microsoft.WSL"
             },
             {
-                "colorScheme":
+                "colorScheme": 
                 {
                     "light": "xcad"
                 },
                 "commandline": "wsl.exe",
                 "cursorShape": "filledBox",
-                "font":
-                {
-                    "size": 11
-                },
                 "guid": "{d8314058-c7ee-476a-a88e-d41b2148f755}",
                 "hidden": false,
                 "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
@@ -218,31 +233,8 @@
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
-        {
-            "background": "#030202",
-            "black": "#000000",
-            "blue": "#2472C8",
-            "brightBlack": "#666666",
-            "brightBlue": "#3B8EEA",
-            "brightCyan": "#29B8DB",
-            "brightGreen": "#23D18B",
-            "brightPurple": "#D670D6",
-            "brightRed": "#F14C4C",
-            "brightWhite": "#E5E5E5",
-            "brightYellow": "#F5F543",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#11A8CD",
-            "foreground": "#CCCCCC",
-            "green": "#0DBC79",
-            "name": "VS Code",
-            "purple": "#BC3FBC",
-            "red": "#CD3131",
-            "selectionBackground": "#FFFFFF",
-            "white": "#E5E5E5",
-            "yellow": "#E5E510"
-        },
         {
             "background": "#010409",
             "black": "#484F58",
@@ -357,6 +349,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#A2734C"
+        },
+        {
+            "background": "#030202",
+            "black": "#000000",
+            "blue": "#2472C8",
+            "brightBlack": "#666666",
+            "brightBlue": "#3B8EEA",
+            "brightCyan": "#29B8DB",
+            "brightGreen": "#23D18B",
+            "brightPurple": "#D670D6",
+            "brightRed": "#F14C4C",
+            "brightWhite": "#E5E5E5",
+            "brightYellow": "#F5F543",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#11A8CD",
+            "foreground": "#CCCCCC",
+            "green": "#0DBC79",
+            "name": "VS Code",
+            "purple": "#BC3FBC",
+            "red": "#CD3131",
+            "selectionBackground": "#FFFFFF",
+            "white": "#E5E5E5",
+            "yellow": "#E5E510"
         },
         {
             "background": "#0D0D0D",
