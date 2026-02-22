@@ -5,7 +5,8 @@ $packages = @(
     "Git.Git",
     "Gitea.tea",
     "Casey.Just",
-    "waterlan.dos2unix"
+    "waterlan.dos2unix",
+    "DEVCOM.JetBrainsMonoNerdFont"
 )
 # Set the execution policy to allow script execution
 #Set-ExecutionPolicy -ExecutionPolicy Unrestricted
