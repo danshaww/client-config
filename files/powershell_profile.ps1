@@ -91,3 +91,16 @@ function pget {
 Set-Alias -Name c -Value clear
 Set-Alias -Name j -Value just
 Set-Alias -Name ll -Value ls
+
+# CD into Git if in standard terminal
+function cdgit {
+    $homePath = $env:USERPROFILE
+    $currentPath = (Get-Location).Path
+    if ($currentPath -eq $homePath) {
+        $gitPath = Join-Path $homePath "git"
+        Set-Location $gitPath
+    }
+}
+
+# Call CD Function
+cdgit

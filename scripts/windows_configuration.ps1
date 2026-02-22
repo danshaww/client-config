@@ -12,6 +12,7 @@ $packages = @(
 
 
 # VS Code with context menu integration
+Write-Output "Installing Microsoft.VisualStudioCode..."
 winget install Microsoft.VisualStudioCode --accept-source-agreements --accept-package-agreements --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
 
 # Other utilities
