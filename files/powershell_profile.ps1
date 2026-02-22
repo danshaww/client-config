@@ -26,7 +26,6 @@ Register-ArgumentCompleter -CommandName ssh,scp,sftp -Native -ScriptBlock {
     | ForEach-Object { [CompletionResult]::new((&$generateCompletionText($_)), $_, [CompletionResultType]::ParameterValue, $_) }
 }
 
-Invoke-Expression (& 'C:\Program Files\starship\bin\starship.exe' init powershell --print-full-init | Out-String)
 Remove-Item Alias:gcm -Force -ErrorAction SilentlyContinue
 
 # Git Commit Function
@@ -104,3 +103,5 @@ function cdgit {
 
 # Call CD Function
 cdgit
+
+Invoke-Expression (& 'C:\Program Files\starship\bin\starship.exe' init powershell --print-full-init | Out-String)
