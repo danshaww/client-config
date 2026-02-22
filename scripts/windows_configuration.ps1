@@ -32,3 +32,7 @@ git config --global credential.helper store
 if (-not (Test-Path "~\Git" )) {
     New-Item -Path "~\Git" -ItemType "Directory"
 }
+
+copy-Item files/powershell_profile.ps1 $PROFILE -Force
+
+. $PROFILE
