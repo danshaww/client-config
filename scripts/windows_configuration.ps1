@@ -12,15 +12,10 @@ $packages = @(
 
 
 # VS Code with context menu integration
-Write-Output "Installing Microsoft.VisualStudioCode..."
 winget install Microsoft.VisualStudioCode --accept-source-agreements --accept-package-agreements --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
 
 # Other utilities
-foreach ($package in $packages) {
-    Write-Output "Installing $package..."
-    winget install --id $package --accept-source-agreements --accept-package-agreements
-}
-
+winget install $packages
 
 #PATH Reload for System & User
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
