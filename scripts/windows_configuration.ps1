@@ -1,12 +1,25 @@
 # Windows Development Configuration Script
 
-$packages = @(
+
+
+# Personal Device Specific Configuration
+if ($env:USERNAME -eq "dan") {
+    git config --global user.name "Dan"
+    git config --global user.email "danshaw509@gmail.com"
+    $packages = @(
     "Git.Git",
     "Gitea.tea",
     "Casey.Just",
     "waterlan.dos2unix",
     "DEVCOM.JetBrainsMonoNerdFont"
-)
+    )
+}else {
+    $packages = @(
+    "Git.Git",
+    "waterlan.dos2unix",
+    "DEVCOM.JetBrainsMonoNerdFont"
+    )
+}
 
 # VS Code with context menu integration
 winget install Microsoft.VisualStudioCode --accept-source-agreements --accept-package-agreements --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
@@ -20,12 +33,6 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 # Git Configuration
 git config --global credential.helper store
 git config --global core.autocrlf false
-
-# Personal Device Specific Configuration
-if ($env:USERNAME -eq "dan") {
-    git config --global user.name "Dan"
-    git config --global user.email "danshaw509@gmail.com"
-}
 
 # Create Git Repository Dir
 if (-not (Test-Path "~\Git" )) {
