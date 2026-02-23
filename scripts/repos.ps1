@@ -1,3 +1,5 @@
+# Windows Gitea Repository Clone Script
+
 $TargetDirectory = "$env:USERPROFILE/Git"
 $GiteaUrl = "https://gitea.epichouse.co.uk"
 # --- Check if tea CLI exists ---

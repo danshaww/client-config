@@ -1,7 +1,10 @@
-# Windows Development Configuration Script
+# Core Windows Development Configuration Script
 
 # Variables
 $WindowsTerminalConfigPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+
+# Welcome Message
+Write-Host "Core Windows Development Configuration" -ForegroundColor Blue
 
 # Personal Device Specific Configuration
 if ($env:USERNAME -eq "dan") {
@@ -20,7 +23,6 @@ if ($env:USERNAME -eq "dan") {
     $packages = @(
     "Git.Git",
     "starship.starship",
-    "waterlan.dos2unix",
     "DEVCOM.JetBrainsMonoNerdFont",
     "Microsoft.AzureCLI"
     )

@@ -1,5 +1,8 @@
 # Bash script to install Ansible, clone other required repositories and execute Ansible WSL playbook.
 
+# TODO: convert this to a powershell script that calls WSL, set default values only likely remove git config in WSL entirely
+
+
 echo "Pulling changes before execution"
 git pull
 
