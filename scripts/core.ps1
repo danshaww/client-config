@@ -1,5 +1,7 @@
 # Core Windows Development Configuration Script
 
+# TODO: Add SSH Key provisioning
+
 # Variables
 $WindowsTerminalConfigPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 
