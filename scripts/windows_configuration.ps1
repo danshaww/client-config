@@ -1,6 +1,7 @@
 # Windows Development Configuration Script
 
-
+# Variables
+$WindowsTerminalConfigPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 
 # Personal Device Specific Configuration
 if ($env:USERNAME -eq "dan") {
@@ -38,6 +39,9 @@ git config --global core.autocrlf false
 if (-not (Test-Path "~\Git" )) {
     New-Item -Path "~\Git" -ItemType "Directory"
 }
+
+# Copy Windows Terminal Configuration
+copy-Item scripts/files/windows_terminal.json $WindowsTerminalConfigPath
 
 # Copy Powershell Profile
 copy-Item scripts/files/powershell_profile.ps1 $PROFILE -Force
