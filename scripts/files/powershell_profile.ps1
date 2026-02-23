@@ -54,8 +54,6 @@ function Invoke-GitPushWithRetry {
     }
 }
 
-
-
 # Git Commit Function
 Remove-Item Alias:gcm -Force -ErrorAction SilentlyContinue
 function gcm {
