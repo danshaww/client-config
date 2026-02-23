@@ -11,12 +11,14 @@ if ($env:USERNAME -eq "dan") {
     "Git.Git",
     "Gitea.tea",
     "Casey.Just",
+    "starship.starship",
     "waterlan.dos2unix",
     "DEVCOM.JetBrainsMonoNerdFont"
     )
 }else {
     $packages = @(
     "Git.Git",
+    "starship.starship",
     "waterlan.dos2unix",
     "DEVCOM.JetBrainsMonoNerdFont"
     )
