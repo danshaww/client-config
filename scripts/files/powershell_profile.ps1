@@ -26,9 +26,38 @@ Register-ArgumentCompleter -CommandName ssh,scp,sftp -Native -ScriptBlock {
     | ForEach-Object { [CompletionResult]::new((&$generateCompletionText($_)), $_, [CompletionResultType]::ParameterValue, $_) }
 }
 
-Remove-Item Alias:gcm -Force -ErrorAction SilentlyContinue
+function Invoke-GitPushWithRetry {
+    param(
+        [int]$MaxRetries = 3,
+        [int]$DelaySeconds = 3
+    )
+
+    for ($attempt = 1; $attempt -le $MaxRetries; $attempt++) {
+        Write-Host "Attempt $attempt of $MaxRetries..." -ForegroundColor Cyan
+
+        git push
+        $exitCode = $LASTEXITCODE
+
+        if ($exitCode -eq 0) {
+            Write-Host "Push succeeded." -ForegroundColor Green
+            return
+        }
+
+        if ($attempt -lt $MaxRetries) {
+            Write-Host "Push failed. Retrying in $DelaySeconds seconds..." -ForegroundColor Yellow
+            Start-Sleep -Seconds $DelaySeconds
+        }
+        else {
+            Write-Host "Push failed after $MaxRetries attempts." -ForegroundColor Red
+            exit $exitCode
+        }
+    }
+}
+
+
 
 # Git Commit Function
+Remove-Item Alias:gcm -Force -ErrorAction SilentlyContinue
 function gcm {
     param(
         [Parameter(ValueFromRemainingArguments=$true)]
@@ -39,7 +68,7 @@ function gcm {
     git add .
     git commit -m "$msg"
     if ($LASTEXITCODE -ne 0) { return }
-    git push
+    Invoke-GitPushWithRetry -MaxRetries 5 -DelaySeconds 10
 }
 
 # Git New Branch Function
