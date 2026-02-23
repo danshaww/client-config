@@ -6,25 +6,26 @@ $WindowsTerminalConfigPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.
 # Welcome Message
 Write-Host "Core Windows Development Configuration" -ForegroundColor Blue
 
-# Personal Device Specific Configuration
 if ($env:USERNAME -eq "dan") {
     git config --global user.name "Dan"
     git config --global user.email "danshaw509@gmail.com"
     $packages = @(
-    "Git.Git",
-    "Gitea.tea",
-    "Casey.Just",
-    "starship.starship",
-    "waterlan.dos2unix",
-    "DEVCOM.JetBrainsMonoNerdFont",
-    "Microsoft.AzureCLI"
+        "Git.Git",
+        "Gitea.tea",
+        "Casey.Just",
+        "starship.starship",
+        "waterlan.dos2unix",
+        "DEVCOM.JetBrainsMonoNerdFont",
+        "Microsoft.AzureCLI",
+        "Microsoft.WindowsTerminal"
     )
 }else {
     $packages = @(
-    "Git.Git",
-    "starship.starship",
-    "DEVCOM.JetBrainsMonoNerdFont",
-    "Microsoft.AzureCLI"
+        "Git.Git",
+        "starship.starship",
+        "DEVCOM.JetBrainsMonoNerdFont",
+        "Microsoft.AzureCLI",
+        "Microsoft.WindowsTerminal"
     )
 }
 
