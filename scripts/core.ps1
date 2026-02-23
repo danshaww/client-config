@@ -1,16 +1,27 @@
 # Core Windows Development Configuration Script
 
-# TODO: Add SSH Key provisioning
-
 # Variables
+$SSHKeyPublic = "https://files.epichouse.co.uk/SSH/id_rsa.pub"
+$SSHKeyPrivate = "https://files.epichouse.co.uk/SSH/id_rsa"
 $WindowsTerminalConfigPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 
 # Welcome Message
 Write-Host "Core Windows Development Configuration" -ForegroundColor Blue
 
 if ($env:USERNAME -eq "dan") {
+    # Configure Git Name & Email
     git config --global user.name "Dan"
     git config --global user.email "danshaw509@gmail.com"
+
+    # SSH Config
+    if (-not (Test-Path "$env:USERPROFILE\.ssh" )) {
+        New-Item -Path "$env:USERPROFILE\.ssh" -ItemType "Directory"
+    }
+    copy-Item scripts/files/ssh_config $env:USERPROFILE\.ssh\config
+    Invoke-WebRequest -Uri $SSHKeyPrivate -OutFile $env:USERPROFILE\.ssh\id_rsa
+    Invoke-WebRequest -Uri $SSHKeyPublic -OutFile $env:USERPROFILE\.ssh\id_rsa.pub
+
+    # Package list for personal devices
     $packages = @(
         "Git.Git",
         "Gitea.tea",
@@ -22,6 +33,7 @@ if ($env:USERNAME -eq "dan") {
         "Microsoft.WindowsTerminal"
     )
 }else {
+    # Package list for non personal devices
     $packages = @(
         "Git.Git",
         "starship.starship",
