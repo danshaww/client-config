@@ -66,7 +66,7 @@ function gcm {
     git add .
     git commit -m "$msg"
     if ($LASTEXITCODE -ne 0) { return }
-    Invoke-GitPushWithRetry -MaxRetries 5 -DelaySeconds 10
+    Invoke-GitPushWithRetry -MaxRetries 5 -DelaySeconds 2
 }
 
 # Git New Branch Function
