@@ -1,7 +1,5 @@
 - name: WSL Configuration
   hosts: localhost
   connection: local
-  vars_files:
-    - ~/.config/client-config.yml
   roles:
     - role: wsl_base

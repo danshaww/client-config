@@ -1,45 +1,23 @@
 - name: SSH | Create Directories
   ansible.builtin.file:
-    path: "{{ item.dir }}/.ssh"
+    path: "/home/{{ base.username }}/.ssh"
     state: directory
     mode: '0700'
-    owner: "{{ item.user }}"
-    group: "{{ item.user }}"
-  with_items:
-    - user: "{{ base.username }}"
-      dir: "/home/{{ base.username }}"
-    - user: "root"
-      dir: "/root"
-  become: true
+    owner: "{{ base.username }}"
+    group: "{{ base.username }}"
 
 - name: SSH | Download Private Key
   ansible.builtin.get_url:
-    url: "{{ item.url }}"
-    dest: "{{ item.dir }}/.ssh"
+    url: "{{ ssh.private_key_url }}"
+    dest: "/home/{{ base.username }}/.ssh"
     mode: '0600'
-    owner: "{{ item.user }}"
-    group: "{{ item.user }}"
-  with_items:
-    - user: "{{ base.username }}"
-      dir: "/home/{{ base.username }}"
-      url: "{{ ssh.private_key_url }}"
-    - user: "root"
-      dir: "/root"
-      url: "{{ ssh.private_key_url }}"
-  become: true
+    owner: "{{ base.username }}"
+    group: "{{ base.username }}"
 
 - name: SSH | Download Public Key
   ansible.builtin.get_url:
-    url: "{{ item.url }}"
-    dest: "{{ item.dir }}/.ssh"
+    url: "{{ ssh.public_key_url }}"
+    dest: "/home/{{ base.username }}/.ssh"
     mode: '0644'
-    owner: "{{ item.user }}"
-    group: "{{ item.user }}"
-  with_items:
-    - user: "{{ base.username }}"
-      dir: "/home/{{ base.username }}"
-      url: "{{ ssh.public_key_url }}"
-    - user: "root"
-      dir: "/root"
-      url: "{{ ssh.public_key_url }}"
-  become: true
+    owner: "{{ base.username }}"
+    group: "{{ base.username }}"

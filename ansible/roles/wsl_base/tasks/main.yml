@@ -1,5 +1,5 @@
-- name: Vars Check
-  ansible.builtin.include_tasks: vars_check.yml
+# - name: Vars Check
+#   ansible.builtin.include_tasks: vars_check.yml
 
 - name: Install Base Packages
   ansible.builtin.include_tasks: package_installation.yml
@@ -9,7 +9,9 @@
 
 - name: Configure SSH Keys
   ansible.builtin.include_tasks: ssh_keys.yml
-  when: base.enable_ssh_key_config
+  when:
+    - base.enable_ssh_key_config
+    - ansible_hostname in personal_devices
 
 - name: Configure Starship
   ansible.builtin.include_tasks: utils/starship.yml

@@ -24,6 +24,12 @@ packages:
   - unzip
   - xclip
 
-ssh_config:
-  - "Host *"
-  - "   StrictHostKeyChecking no"
+personal_devices:
+  - dan-desktop
+  - dan-thinkpad
+  - ldnvdiprd1
+  - ldnvdiprd2
+  - ldnvditst1
+  - ldnvditst2
+  - mcrvdiprd1
+  - mcrvdiprd3

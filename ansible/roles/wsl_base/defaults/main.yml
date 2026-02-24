@@ -1,18 +1,13 @@
 base:
-  configure_known_hosts: true
-  known_hosts: ""
-  username: ""
-  git_name: ""
-  git_email: ""
   git_directory: "~/git/"
-  git_repositories: []
   enable_oh_my_posh: false
   enable_starship: true
   enable_az_cli: false
   enable_docker: true
   enable_terraform: true
-  enable_ssh_key_config: false
+  enable_ssh_key_config: true
+  username: dan
 
 ssh:
-  private_key_url: null
-  public_key_url: null
+  private_key_url: https://files.epichouse.co.uk/SSH/id_rsa
+  public_key_url: https://files.epichouse.co.uk/SSH/id_rsa.pub

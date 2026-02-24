@@ -1,32 +1,16 @@
 # Bash script to install Ansible, clone other required repositories and execute Ansible WSL playbook.
 
-# TODO: convert this to a powershell script that calls WSL, set default values only likely remove git config in WSL entirely
-# TODO: Maybe copy windows gitconfig file into WSL?
-
 echo "Pulling changes before execution"
 git pull
 
-# Check for required vars file
-
-if [ ! -f ~/.config/client-config.yml ]; then
-    # Check for legacy vars.yml in ansible dir
-    if [ -f ansible/vars.yml ]; then
-        printf "\033[0;31mMigrating legacy vars to ~/.config/client-config.yml\n"
-        cp ansible/vars.yml ~/.config/client-config.yml
-        rm ansible/vars.yml
-    # Create config if not exists
-    else
-        printf "\033[0;31m~/.config/client-config.yml not found. vars_template.yml has been duplicated, populate vars before running this script again\n"
-        cp ansible/.vars_template.yml ~/.config/client-config.yml
-        ln ~/.config/client-config.yml client-config.yml
-        exit
-    fi
+# Remove legacy config files
+if [ -f client-config.yml ]; then
+    rm client-config.yml
+    echo "Removed Client Config ln"
 fi
-
-# Create symbolic link to client-config.yml
-if [ ! -f client-config.yml ]; then
-    # Check for legacy vars.yml in ansible dir
-    ln ~/.config/client-config.yml client-config.yml
+if [ -f ~/.config/client-config.yml ]; then
+    rm ~/.config/client-config.yml
+    echo "Removed Client Config file"
 fi
 
 ### Git Configuration
@@ -34,7 +18,6 @@ if ! git config --global user.name >/dev/null; then
     read -rp "Enter your Git Name: " git_name
     git config --global user.name "$git_name"
 fi
-
 if ! git config --global user.email >/dev/null; then
     read -rp "Enter your Git Email: " git_email
     git config --global user.email "$git_email"
@@ -52,6 +35,7 @@ cd ansible
 ansible-playbook playbook.yml # --ask-become-pass
 cd ../
 
+# Final Output
 echo "Current Git identity:"
 git config --global --get user.name
 git config --global --get user.email

@@ -12,13 +12,6 @@
     dest: ~/
     mode: '0755'
 
-- name: Copy home directory files (root)
-  ansible.builtin.copy:
-    src: home/
-    dest: /root/
-    mode: '0755'
-  become: true
-
 - name: Copy Executables
   ansible.builtin.copy:
     src: bin/
@@ -36,11 +29,3 @@
     path: "{{ base.git_directory }}"
     state: directory
     mode: '0755'
-
-- name: Populate SSH Config (user)
-  ansible.builtin.lineinfile:
-    path: ~/.ssh/config
-    line: "{{ item }}"
-    mode: '0755'
-    create: true
-  with_items: "{{ ssh_config }}"
