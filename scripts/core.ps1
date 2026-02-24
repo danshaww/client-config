@@ -4,15 +4,14 @@
 $SSHKeyPublic = "https://files.epichouse.co.uk/SSH/id_rsa.pub"
 $SSHKeyPrivate = "https://files.epichouse.co.uk/SSH/id_rsa"
 $WindowsTerminalConfigPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+$GitName  = git config --global user.name  2>$null
+$GitEmail = git config --global user.email 2>$null
+
 
 # Welcome Message
 Write-Host "Core Windows Development Configuration" -ForegroundColor Blue
 
 if ($env:USERNAME -eq "dan") {
-    # Configure Git Name & Email
-    git config --global user.name "Dan"
-    git config --global user.email "danshaw509@gmail.com"
-
     # SSH Config
     if (-not (Test-Path "$env:USERPROFILE\.ssh" )) {
         New-Item -Path "$env:USERPROFILE\.ssh" -ItemType "Directory"
@@ -33,6 +32,8 @@ if ($env:USERNAME -eq "dan") {
         "Microsoft.WindowsTerminal"
     )
 }else {
+
+
     # Package list for non personal devices
     $packages = @(
         "Git.Git",
@@ -55,6 +56,19 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 # Git Configuration
 git config --global credential.helper store
 git config --global core.autocrlf false
+if (-not $GitName) {
+    Write-Host "Git name not configured." -ForegroundColor Red
+    $GitName = Read-Host "Enter Git Name"
+    git config --global user.name $GitName
+}
+if (-not $GitEmail) {
+    Write-Host "Git email not configured." -ForegroundColor Red
+    $GitEmail = Read-Host "Enter Git Email"
+    git config --global user.email $GitEmail
+}
+
+Write-Host "Git name is configured as $GitName" -ForegroundColor Blue
+Write-Host "Git email is configured as $GitEmail" -ForegroundColor Blue
 
 # Create Git Repository Dir
 if (-not (Test-Path "~\Git" )) {
