@@ -25,18 +25,6 @@
     dest: ~/bin/
     mode: '0755'
 
-- name: Set Git user name
-  community.general.git_config:
-    name: user.name
-    scope: global
-    value: "{{ base.git_name }}"
-
-- name: Set Git user email
-  community.general.git_config:
-    name: user.email
-    scope: global
-    value: "{{ base.git_email }}"
-
 - name: Set Git Credential Helper
   community.general.git_config:
     name: credential.helper

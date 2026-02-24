@@ -29,6 +29,17 @@ if [ ! -f client-config.yml ]; then
     ln ~/.config/client-config.yml client-config.yml
 fi
 
+### Git Configuration
+if ! git config --global user.name >/dev/null; then
+    read -rp "Enter your Git Name: " git_name
+    git config --global user.name "$git_name"
+fi
+
+if ! git config --global user.email >/dev/null; then
+    read -rp "Enter your Git Email: " git_email
+    git config --global user.email "$git_email"
+fi
+
 ### Ansible installation
 if ! which ansible > /dev/null; then
     sudo apt-add-repository ppa:ansible/ansible
@@ -40,3 +51,7 @@ fi
 cd ansible
 ansible-playbook playbook.yml # --ask-become-pass
 cd ../
+
+echo "Current Git identity:"
+git config --global --get user.name
+git config --global --get user.email
