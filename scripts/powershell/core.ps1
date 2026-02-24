@@ -7,8 +7,8 @@ $WindowsTerminalConfigPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.
 $GitName  = git config --global user.name  2>$null
 $GitEmail = git config --global user.email 2>$null
 $QuickAccessPinnedItems = @(
-    "$env:USERPROFILE",
-    "$env:USERPROFILE\Git"
+    "$env:USERPROFILE"
+    # "$env:USERPROFILE\Git"
 )
 
 # Welcome Message
@@ -19,19 +19,19 @@ if ($env:USERNAME -eq "dan") {
     if (-not (Test-Path "$env:USERPROFILE\.ssh" )) {
         New-Item -Path "$env:USERPROFILE\.ssh" -ItemType "Directory"
     }
-    copy-Item scripts/files/ssh_config $env:USERPROFILE\.ssh\config
+    copy-Item scripts/powershell/files/ssh_config $env:USERPROFILE\.ssh\config
     Invoke-WebRequest -Uri $SSHKeyPrivate -OutFile $env:USERPROFILE\.ssh\id_rsa
     Invoke-WebRequest -Uri $SSHKeyPublic -OutFile $env:USERPROFILE\.ssh\id_rsa.pub
 
     # Package list for personal devices
     $packages = @(
-        "Git.Git",
-        "Gitea.tea",
-        "Casey.Just",
+        # "Git.Git",
+        # "Gitea.tea",
+        # "Casey.Just",
         "starship.starship",
-        "waterlan.dos2unix",
+        # "waterlan.dos2unix",
         "DEVCOM.JetBrainsMonoNerdFont",
-        "Microsoft.AzureCLI",
+        # "Microsoft.AzureCLI",
         "Microsoft.WindowsTerminal"
     )
 }else {
@@ -39,10 +39,10 @@ if ($env:USERNAME -eq "dan") {
 
     # Package list for non personal devices
     $packages = @(
-        "Git.Git",
+        # "Git.Git",
         "starship.starship",
         "DEVCOM.JetBrainsMonoNerdFont",
-        "Microsoft.AzureCLI",
+        # "Microsoft.AzureCLI",
         "Microsoft.WindowsTerminal"
     )
 }
@@ -57,23 +57,23 @@ winget install $packages
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 # Git Configuration
-git config --global credential.helper store
-git config --global core.autocrlf false
-if (-not $GitName) {
-    Write-Host "Git name not configured." -ForegroundColor Red
-    $GitName = Read-Host "Enter Git Name"
-    git config --global user.name $GitName
-}
-if (-not $GitEmail) {
-    Write-Host "Git email not configured." -ForegroundColor Red
-    $GitEmail = Read-Host "Enter Git Email"
-    git config --global user.email $GitEmail
-}
+# git config --global credential.helper store
+# git config --global core.autocrlf false
+# if (-not $GitName) {
+#     Write-Host "Git name not configured." -ForegroundColor Red
+#     $GitName = Read-Host "Enter Git Name"
+#     git config --global user.name $GitName
+# }
+# if (-not $GitEmail) {
+#     Write-Host "Git email not configured." -ForegroundColor Red
+#     $GitEmail = Read-Host "Enter Git Email"
+#     git config --global user.email $GitEmail
+# }
 
 # Create Git Repository Dir
-if (-not (Test-Path "~\Git" )) {
-    New-Item -Path "~\Git" -ItemType "Directory"
-}
+# if (-not (Test-Path "~\Git" )) {
+#     New-Item -Path "~\Git" -ItemType "Directory"
+# }
 
 # Pin folders to Quick Access
 $shell = New-Object -ComObject Shell.Application
@@ -103,13 +103,13 @@ foreach ($PathToPin in $QuickAccessPinnedItems) {
 }
 
 # Copy Windows Terminal Configuration
-copy-Item scripts/files/windows_terminal.json $WindowsTerminalConfigPath
+copy-Item scripts/powershell/files/windows_terminal.json $WindowsTerminalConfigPath
 
 # Copy Powershell Profile
-copy-Item scripts/files/powershell_profile.ps1 $PROFILE -Force
+copy-Item scripts/powershell/files/powershell_profile.ps1 $PROFILE -Force
 
-Write-Host "Git name is configured as $GitName" -ForegroundColor Blue
-Write-Host "Git email is configured as $GitEmail" -ForegroundColor Blue
+# Write-Host "Git name is configured as $GitName" -ForegroundColor Blue
+# Write-Host "Git email is configured as $GitEmail" -ForegroundColor Blue
 
 # End - Re-Evaluate Powershell Profile
 . $PROFILE

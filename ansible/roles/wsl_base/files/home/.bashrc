@@ -156,4 +156,6 @@ export EDITOR='code --wait -r'
 export PATH=$PATH:$HOME/.tfenv/bin
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault
 
+[[ "$PWD" == "$HOME" ]] && cd "$HOME/git"
+
 eval "$(starship init bash)"

@@ -1,30 +1,29 @@
-set shell := ["powershell.exe", "-c"]
-
 default:
 	just --list
 
 # Run Full Provisioning
 full:
-	scripts/core.ps1
-	scripts/extended.ps1
-	wsl scripts/bash/setup_wsl.sh
+	scripts/core.sh
+	powershell scripts/powershell/core.ps1
+	powershell scripts/powershell/extended.ps1
 
 # Run WSL provisioning script
 wsl:
-	wsl scripts/bash/setup_wsl.sh
+	scripts/core.sh
 
 # Run Git provisioning script
 [no-cd]
 git:
-	scripts/repos.ps1
+	scripts/repos.sh
 
 # Run Core Windows Provisioning
 core:
-	scripts/core.ps1
+	scripts/core.sh
+	powershell scripts/powershell/core.ps1
 
 # Run Extended Windows Provisioning script
 extended:
-	scripts/extended.ps1
+	powershell scripts/powershell/extended.ps1
 
 # Update origin to Gitea
 set-origin:
