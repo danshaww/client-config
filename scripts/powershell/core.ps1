@@ -20,8 +20,8 @@ if ($env:USERNAME -eq "dan") {
         New-Item -Path "$env:USERPROFILE\.ssh" -ItemType "Directory"
     }
     copy-Item scripts/powershell/files/ssh_config $env:USERPROFILE\.ssh\config
-    Invoke-WebRequest -Uri $SSHKeyPrivate -OutFile $env:USERPROFILE\.ssh\id_rsa
-    Invoke-WebRequest -Uri $SSHKeyPublic -OutFile $env:USERPROFILE\.ssh\id_rsa.pub
+    # Invoke-WebRequest -Uri $SSHKeyPrivate -OutFile $env:USERPROFILE\.ssh\id_rsa
+    # Invoke-WebRequest -Uri $SSHKeyPublic -OutFile $env:USERPROFILE\.ssh\id_rsa.pub
 
     # Package list for personal devices
     $packages = @(
