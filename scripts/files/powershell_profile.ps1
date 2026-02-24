@@ -34,8 +34,8 @@ function Invoke-GitPushWithRetry {
 
     for ($attempt = 1; $attempt -le $MaxRetries; $attempt++) {
         Write-Host "Attempt $attempt of $MaxRetries..." -ForegroundColor Cyan
-
-        git push
+        $GitBranch = git rev-parse --abbrev-ref HEAD
+        git push $GitBranch
         $exitCode = $LASTEXITCODE
 
         if ($exitCode -eq 0) {
@@ -61,7 +61,6 @@ function gcm {
         [Parameter(ValueFromRemainingArguments=$true)]
         [string[]]$Message
     )
-
     $msg = $Message -join " "
     git add .
     git commit -m "$msg"

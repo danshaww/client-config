@@ -6,6 +6,10 @@ $SSHKeyPrivate = "https://files.epichouse.co.uk/SSH/id_rsa"
 $WindowsTerminalConfigPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 $GitName  = git config --global user.name  2>$null
 $GitEmail = git config --global user.email 2>$null
+$QuickAccessPinnedItems = @(
+    "$env:USERPROFILE",
+    "$env:USERPROFILE\Git"
+)
 
 # Welcome Message
 Write-Host "Core Windows Development Configuration" -ForegroundColor Blue
@@ -66,12 +70,36 @@ if (-not $GitEmail) {
     git config --global user.email $GitEmail
 }
 
-Write-Host "Git name is configured as $GitName" -ForegroundColor Blue
-Write-Host "Git email is configured as $GitEmail" -ForegroundColor Blue
-
 # Create Git Repository Dir
 if (-not (Test-Path "~\Git" )) {
     New-Item -Path "~\Git" -ItemType "Directory"
+}
+
+# Pin folders to Quick Access
+$shell = New-Object -ComObject Shell.Application
+$quickAccess = $shell.Namespace("shell:::{679f85cb-0220-4080-b29b-5540cc05aab6}")
+$currentPinned = @()
+foreach ($item in $quickAccess.Items()) {
+    try { $currentPinned += $item.Path } catch {}
+}
+foreach ($PathToPin in $QuickAccessPinnedItems) {
+    if (!(Test-Path $PathToPin)) {
+        Write-Warning "$PathToPin does not exist. Skipping Quick Access pinning." -ForegroundColor Red
+        continue
+    }
+    $resolvedPath = (Resolve-Path $PathToPin).Path
+    if ($currentPinned -contains $resolvedPath) {
+        Write-Host "$resolvedPath already pinned to Quick Access." -ForegroundColor Blue
+        continue
+    }
+    $parent = Split-Path $resolvedPath
+    $leaf   = Split-Path $resolvedPath -Leaf
+    $folder = $shell.Namespace($parent)
+    $item   = $folder.ParseName($leaf)
+    if ($item) {
+        $item.InvokeVerb("pintohome")
+        Write-Host "$resolvedPath pinned  to Quick Access successfully." -ForegroundColor Blue
+    }
 }
 
 # Copy Windows Terminal Configuration
@@ -79,6 +107,9 @@ copy-Item scripts/files/windows_terminal.json $WindowsTerminalConfigPath
 
 # Copy Powershell Profile
 copy-Item scripts/files/powershell_profile.ps1 $PROFILE -Force
+
+Write-Host "Git name is configured as $GitName" -ForegroundColor Blue
+Write-Host "Git email is configured as $GitEmail" -ForegroundColor Blue
 
 # End - Re-Evaluate Powershell Profile
 . $PROFILE
