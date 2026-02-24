@@ -7,7 +7,6 @@ $WindowsTerminalConfigPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.
 $GitName  = git config --global user.name  2>$null
 $GitEmail = git config --global user.email 2>$null
 
-
 # Welcome Message
 Write-Host "Core Windows Development Configuration" -ForegroundColor Blue
 
