@@ -23,6 +23,10 @@ if ($env:USERNAME -eq "dan") {
     # Invoke-WebRequest -Uri $SSHKeyPrivate -OutFile $env:USERPROFILE\.ssh\id_rsa
     # Invoke-WebRequest -Uri $SSHKeyPublic -OutFile $env:USERPROFILE\.ssh\id_rsa.pub
 
+    # Disable UAC
+    Start-Process powershell -Verb RunAs -ArgumentList "-Command `"Set-ItemProperty -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 0
+`""
+
     # Package list for personal devices
     $packages = @(
         # "Git.Git",
@@ -55,6 +59,11 @@ winget install $packages
 
 #PATH Reload for System & User
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
+# File Explorer Configuration
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "UseCompactMode" -Value 1
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name Hidden -Value 1
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name HideFileExt -Value 0
 
 # Git Configuration
 # git config --global credential.helper store
