@@ -115,6 +115,9 @@ foreach ($PathToPin in $QuickAccessPinnedItems) {
 copy-Item scripts/powershell/files/windows_terminal.json $WindowsTerminalConfigPath
 
 # Copy Powershell Profile
+if (!(Test-Path -Path $PROFILE)) {
+  New-Item -ItemType File -Path $PROFILE -Force
+}
 copy-Item scripts/powershell/files/powershell_profile.ps1 $PROFILE -Force
 
 # Write-Host "Git name is configured as $GitName" -ForegroundColor Blue
