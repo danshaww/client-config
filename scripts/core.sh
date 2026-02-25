@@ -31,8 +31,13 @@ if ! which ansible > /dev/null; then
 fi
 
 # Execute Ansible Playbook
+
 cd ansible
-ansible-playbook playbook.yml # --ask-become-pass
+if [ ! -f /etc/sudoers.d/$(whoami) ]; then
+    ansible-playbook playbook.yml --ask-become-pass
+else
+    ansible-playbook playbook.yml
+fi
 cd ../
 
 # Final Output
