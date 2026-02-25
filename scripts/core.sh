@@ -14,14 +14,14 @@ if [ -f ~/.config/client-config.yml ]; then
 fi
 
 ### Git Configuration
-if ! git config --global user.name >/dev/null; then
-    read -rp "Enter your Git Name: " git_name
-    git config --global user.name "$git_name"
-fi
-if ! git config --global user.email >/dev/null; then
-    read -rp "Enter your Git Email: " git_email
-    git config --global user.email "$git_email"
-fi
+# if ! git config --global user.name >/dev/null; then
+#     read -rp "Enter your Git Name: " git_name
+#     git config --global user.name "$git_name"
+# fi
+# if ! git config --global user.email >/dev/null; then
+#     read -rp "Enter your Git Email: " git_email
+#     git config --global user.email "$git_email"
+# fi
 
 ### Ansible installation
 if ! which ansible > /dev/null; then
