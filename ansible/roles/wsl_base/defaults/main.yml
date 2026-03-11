@@ -9,5 +9,5 @@ base:
   username: dan
 
 ssh:
-  private_key_url: https://files.epichouse.co.uk/SSH/id_rsa
-  public_key_url: https://files.epichouse.co.uk/SSH/id_rsa.pub
+  private_key_url: https://files.epichouse.co.uk/software/SSH/id_rsa
+  public_key_url: https://files.epichouse.co.uk/software/SSH/id_rsa.pub
