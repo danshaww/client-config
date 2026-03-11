@@ -4,8 +4,8 @@
 $SSHKeyPublic = "https://files.epichouse.co.uk/SSH/id_rsa.pub"
 $SSHKeyPrivate = "https://files.epichouse.co.uk/SSH/id_rsa"
 $WindowsTerminalConfigPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-$GitName  = git config --global user.name  2>$null
-$GitEmail = git config --global user.email 2>$null
+# $GitName  = git config --global user.name  2>$null
+# $GitEmail = git config --global user.email 2>$null
 $QuickAccessPinnedItems = @(
     "$env:USERPROFILE"
     # "$env:USERPROFILE\Git"
