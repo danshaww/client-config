@@ -124,7 +124,17 @@ alias j=just
 alias pbcopy="xclip -sel clip"
 alias x="xclip -sel clip"
 alias g="git status"
-alias gu="~/git/client-config/scripts/gitea_repositories.sh"
+alias gu="~/git/client-config/scripts/repos.sh"
+
+# Set Power Mode to High Performance
+alias phigh="powershell.exe 'powercfg /setactive SCHEME_MIN'"
+# Set Power Mode to Balanced
+alias pmid="powershell.exe 'powercfg /setactive SCHEME_BALANCED'"
+# Set Power Mode to Power Saver
+alias plow="powershell.exe 'powercfg /setactive SCHEME_MAX'"
+# Get Power Mode
+alias pget="powershell.exe 'powercfg /getactivescheme' && echo ''"
+
 
 # Custom Functions
 gcm() {
