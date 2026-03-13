@@ -113,10 +113,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias nf=neofetch
-alias powershell="powershell.exe"
-alias pwsh="powershell.exe"
-alias winget="powershell.exe winget"
-alias ipconfig="powershell.exe ipconfig"
+alias powershell="powershell.exe && title $USER@$HOSTNAME"
+alias pwsh="powershell.exe && title $USER@$HOSTNAME"
+alias winget="powershell.exe winget && title $USER@$HOSTNAME"
+alias ipconfig="powershell.exe ipconfig && title $USER@$HOSTNAME"
 alias c=clear
 alias q=exit
 alias of=onefetch
@@ -171,6 +171,13 @@ title()
 ssh()
 {
    /usr/bin/ssh "$@"
+   # revert the window title after the ssh command
+   title $USER@$HOSTNAME
+}
+
+rdp()
+{
+   powershell.exe mstsc.exe /v: "$@"
    # revert the window title after the ssh command
    title $USER@$HOSTNAME
 }
