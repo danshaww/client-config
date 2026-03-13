@@ -127,13 +127,13 @@ alias g="git status"
 alias gu="~/git/client-config/scripts/repos.sh"
 
 # Set Power Mode to High Performance
-alias phigh="powershell.exe 'powercfg /setactive SCHEME_MIN'"
+alias phigh="powershell.exe 'powercfg /setactive SCHEME_MIN' && title $USER@$HOSTNAME"
 # Set Power Mode to Balanced
-alias pmid="powershell.exe 'powercfg /setactive SCHEME_BALANCED'"
+alias pmid="powershell.exe 'powercfg /setactive SCHEME_BALANCED' && title $USER@$HOSTNAME"
 # Set Power Mode to Power Saver
-alias plow="powershell.exe 'powercfg /setactive SCHEME_MAX'"
+alias plow="powershell.exe 'powercfg /setactive SCHEME_MAX' && title $USER@$HOSTNAME"
 # Get Power Mode
-alias pget="powershell.exe 'powercfg /getactivescheme' && echo ''"
+alias pget="powershell.exe 'powercfg /getactivescheme' && echo '' && title $USER@$HOSTNAME"
 
 
 # Custom Functions
@@ -162,10 +162,24 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+title()
+{
+   # change the title of the current window or tab
+   echo -ne "\033]0;$*\007"
+}
+
+ssh()
+{
+   /usr/bin/ssh "$@"
+   # revert the window title after the ssh command
+   title $USER@$HOSTNAME
+}
+
 export EDITOR='code --wait -r'
 export PATH=$PATH:$HOME/.tfenv/bin
 # export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault
 
 [[ "$PWD" == "$HOME" ]] && cd "$HOME/git"
 
+title $USER@$HOSTNAME
 eval "$(starship init bash)"
