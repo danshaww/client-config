@@ -121,6 +121,7 @@ alias c=clear
 alias q=exit
 alias of=onefetch
 alias j=just
+alias k=kubectl
 alias pbcopy="xclip -sel clip"
 alias x="xclip -sel clip"
 alias g="git status"
