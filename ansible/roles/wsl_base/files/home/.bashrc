@@ -144,7 +144,7 @@ winget() {
     powershell.exe winget "$*"
     title $USER@$HOSTNAME
 }
-winget() {
+ipconfig() {
     powershell.exe ipconfig "$*"
     title $USER@$HOSTNAME
 }
