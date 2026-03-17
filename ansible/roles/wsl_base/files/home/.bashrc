@@ -113,10 +113,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias nf=neofetch
-alias powershell="powershell.exe && title $USER@$HOSTNAME"
-alias pwsh="powershell.exe && title $USER@$HOSTNAME"
-alias winget="powershell.exe winget && title $USER@$HOSTNAME"
-alias ipconfig="powershell.exe ipconfig && title $USER@$HOSTNAME"
 alias c=clear
 alias q=exit
 alias of=onefetch
@@ -137,7 +133,22 @@ alias plow="powershell.exe 'powercfg /setactive SCHEME_MAX' && title $USER@$HOST
 alias pget="powershell.exe 'powercfg /getactivescheme' && echo '' && title $USER@$HOSTNAME"
 
 
-# Custom Functions
+
+
+# Functions
+powershell() {
+    powershell.exe "$*"
+    title $USER@$HOSTNAME
+}
+winget() {
+    powershell.exe winget "$*"
+    title $USER@$HOSTNAME
+}
+winget() {
+    powershell.exe ipconfig "$*"
+    title $USER@$HOSTNAME
+}
+
 gcm() {
     #git commit function
     git add .
