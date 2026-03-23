@@ -1,14 +1,14 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
             "command": "find",
             "id": "User.find"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -21,21 +21,21 @@
             "id": "User.paste"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "quakeMode"
             },
             "id": "User.quakeMode.F1E129A4"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab"
             },
             "id": "User.newTab.5DEADB41"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newWindow",
                 "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
@@ -43,7 +43,7 @@
             "id": "User.newWindow.36322AFD"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -63,7 +63,7 @@
     "disableAnimations": true,
     "initialCols": 110,
     "initialRows": 35,
-    "keybindings": 
+    "keybindings":
     [
         {
             "id": "User.splitPane.A6751878",
@@ -147,21 +147,27 @@
         }
     ],
     "launchMode": "default",
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
         "defaults": {
             "colorScheme": {
                 "dark": "VS Code Dark Modern",
                 "light": "VS Code Light Modern"
-            }
+            },
+            "font":
+            {
+                "face": "JetBrainsMono Nerd Font",
+                "size": 11,
+                "weight": "bold"
+            },
         },
-        "list": 
+        "list":
         [
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -209,7 +215,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "name": "VS Code Dark Modern",
