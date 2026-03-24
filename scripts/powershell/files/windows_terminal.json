@@ -219,7 +219,7 @@
     [
         {
             "name": "VS Code Dark Modern",
-            "background": "#1F1F1F",
+            "background": "#000000",
             "foreground": "#CCCCCC",
             "selectionBackground": "#264F78",
             "cursorColor": "#AEAFAD",
