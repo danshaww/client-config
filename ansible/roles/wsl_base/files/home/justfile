@@ -20,11 +20,11 @@ pget:
 
 #git
 git:
-	cd ~/git/client-config && ./scripts/gitea_repositories.sh
+	cd ~/git/client-config && ./scripts/repos.sh
 
 #wsl
 wsl:
-	cd ~/git/client-config && ./scripts/setup_wsl.sh
+	cd ~/git/client-config && ./scripts/core.sh
 
 # Output my DNS zone contents via VS Code
 dns:

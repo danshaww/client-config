@@ -6,18 +6,17 @@
     owner: "{{ base.username }}"
     group: "{{ base.username }}"
 
-- name: SSH | Download Private Key
+- name: SSH | Download Keys
   ansible.builtin.get_url:
-    url: "{{ ssh.private_key_url }}"
+    url: "{{ item.path }}"
     dest: "/home/{{ base.username }}/.ssh"
-    mode: '0600'
+    mode: "{{ item.mode }}"
     owner: "{{ base.username }}"
     group: "{{ base.username }}"
-
-- name: SSH | Download Public Key
-  ansible.builtin.get_url:
-    url: "{{ ssh.public_key_url }}"
-    dest: "/home/{{ base.username }}/.ssh"
-    mode: '0644'
-    owner: "{{ base.username }}"
-    group: "{{ base.username }}"
+    url_username: "{{ base.username }}"
+    url_password: "{{ ansible_sudo_pass }}"
+  with_items:
+    - path: "{{ ssh.private_key_url }}"
+      mode: 0600
+    - path: "{{ ssh.public_key_url }}"
+      mode: 0644

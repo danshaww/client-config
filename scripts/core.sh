@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Bash script to install Ansible, clone other required repositories and execute Ansible WSL playbook.
 
 echo "Pulling changes before execution"
@@ -33,11 +35,10 @@ fi
 # Execute Ansible Playbook
 
 cd ansible
-if [ ! -f /etc/sudoers.d/$(whoami) ]; then
-    ansible-playbook playbook.yml --ask-become-pass
-else
-    ansible-playbook playbook.yml
-fi
+read -s -p "Enter sudo password: " sudo_password
+echo ""
+ansible-playbook playbook.yml -e pwd=$sudo_password -e ansible_sudo_pass=$sudo_password
+
 cd ../
 
 # Final Output
