@@ -1,14 +1,14 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
             "command": "find",
             "id": "User.find"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -21,21 +21,21 @@
             "id": "User.paste"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "quakeMode"
             },
             "id": "User.quakeMode.F1E129A4"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "newTab"
             },
             "id": "User.newTab.5DEADB41"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "newWindow",
                 "profile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}"
@@ -43,7 +43,7 @@
             "id": "User.newWindow.36322AFD"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "copy",
                 "singleLine": false
@@ -63,7 +63,7 @@
     "disableAnimations": true,
     "initialCols": 110,
     "initialRows": 35,
-    "keybindings":
+    "keybindings": 
     [
         {
             "id": "User.splitPane.A6751878",
@@ -94,7 +94,7 @@
             "keys": "ctrl+w"
         },
         {
-            "id": null,
+            "id": "User.quakeMode.F1E129A4",
             "keys": "win+sc(41)"
         },
         {
@@ -147,27 +147,29 @@
         }
     ],
     "launchMode": "default",
-    "newTabMenu":
+    "newTabMenu": 
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
+    "profiles": 
     {
-        "defaults": {
-            "colorScheme": {
+        "defaults": 
+        {
+            "colorScheme": 
+            {
                 "dark": "VS Code Dark Modern",
                 "light": "VS Code Light Modern"
             },
-            "font":
+            "font": 
             {
                 "face": "JetBrainsMono Nerd Font",
                 "size": 11,
                 "weight": "bold"
             }
         },
-        "list":
+        "list": 
         [
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -215,53 +217,53 @@
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
-            "name": "VS Code Dark Modern",
             "background": "#000000",
-            "foreground": "#CCCCCC",
-            "selectionBackground": "#264F78",
-            "cursorColor": "#AEAFAD",
             "black": "#1E1E1E",
-            "red": "#CD3131",
-            "green": "#0DBC79",
-            "yellow": "#E5E510",
             "blue": "#2472C8",
-            "purple": "#BC3FBC",
-            "cyan": "#11A8CD",
-            "white": "#E5E5E5",
             "brightBlack": "#666666",
-            "brightRed": "#F14C4C",
-            "brightGreen": "#23D18B",
-            "brightYellow": "#F5F543",
             "brightBlue": "#3B8EEA",
-            "brightPurple": "#D670D6",
             "brightCyan": "#29B8DB",
-            "brightWhite": "#E5E5E5"
+            "brightGreen": "#23D18B",
+            "brightPurple": "#D670D6",
+            "brightRed": "#F14C4C",
+            "brightWhite": "#E5E5E5",
+            "brightYellow": "#F5F543",
+            "cursorColor": "#AEAFAD",
+            "cyan": "#11A8CD",
+            "foreground": "#CCCCCC",
+            "green": "#0DBC79",
+            "name": "VS Code Dark Modern",
+            "purple": "#BC3FBC",
+            "red": "#CD3131",
+            "selectionBackground": "#264F78",
+            "white": "#E5E5E5",
+            "yellow": "#E5E510"
         },
         {
-            "name": "VS Code Light Modern",
             "background": "#FFFFFF",
-            "foreground": "#383A42",
-            "selectionBackground": "#ADD6FF",
-            "cursorColor": "#383A42",
             "black": "#000000",
-            "red": "#CD3131",
-            "green": "#00BC00",
-            "yellow": "#949800",
             "blue": "#0451A5",
-            "purple": "#BC05BC",
-            "cyan": "#0598BC",
-            "white": "#555555",
             "brightBlack": "#666666",
-            "brightRed": "#CD3131",
-            "brightGreen": "#14CE14",
-            "brightYellow": "#B5BA00",
             "brightBlue": "#0451A5",
-            "brightPurple": "#BC05BC",
             "brightCyan": "#0598BC",
-            "brightWhite": "#A5A5A5"
+            "brightGreen": "#14CE14",
+            "brightPurple": "#BC05BC",
+            "brightRed": "#CD3131",
+            "brightWhite": "#A5A5A5",
+            "brightYellow": "#B5BA00",
+            "cursorColor": "#383A42",
+            "cyan": "#0598BC",
+            "foreground": "#383A42",
+            "green": "#00BC00",
+            "name": "VS Code Light Modern",
+            "purple": "#BC05BC",
+            "red": "#CD3131",
+            "selectionBackground": "#ADD6FF",
+            "white": "#555555",
+            "yellow": "#949800"
         }
     ],
     "showTabsInTitlebar": true,
