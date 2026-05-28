@@ -5,29 +5,11 @@ default:
 [no-cd]
 ls:
 	tree . -L 1
-# Set Power Mode to High Performance
-phigh:
-	powershell.exe 'powercfg /setactive SCHEME_MIN'
-# Set Power Mode to Balanced
-pmid:
-	powershell.exe 'powercfg /setactive SCHEME_BALANCED'
-# Set Power Mode to Power Saver
-plow:
-	powershell.exe 'powercfg /setactive SCHEME_MAX'
-# Get Power Mode
-pget:
-	powershell.exe 'powercfg /getactivescheme' && echo ""
 
 #git
 git:
 	cd ~/git/client-config && ./scripts/repos.sh
 
 #wsl
-wsl:
+core:
 	cd ~/git/client-config && ./scripts/core.sh
-
-# Output my DNS zone contents via VS Code
-dns:
-	ssh dan@ldndnsprd1 "sudo rndc dumpdb -zones && sleep 5 && sudo cat /var/cache/bind/named_dump.db" > dumpfile.zone
-	sed -i '/^;/d' dumpfile.zone
-	code dumpfile.zone
