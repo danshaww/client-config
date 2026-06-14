@@ -201,4 +201,5 @@ export PATH=$PATH:$HOME/.tfenv/bin
 [[ "$PWD" == "$HOME" ]] && cd "$HOME/git"
 
 title $USER@$HOSTNAME
+starship config hostname.ssh_only false
 eval "$(starship init bash)"
