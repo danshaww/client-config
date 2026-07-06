@@ -23,6 +23,7 @@ packages:
   - tree
   - unzip
   - xclip
+  - ncdu
 
 personal_devices:
   - dan-desktop

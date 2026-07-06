@@ -3,8 +3,8 @@ base:
   enable_oh_my_posh: false
   enable_starship: true
   enable_az_cli: false
-  enable_docker: true
-  enable_terraform: true
+  enable_docker: false
+  enable_terraform: false
   enable_ssh_key_config: true
   username: dan
 
