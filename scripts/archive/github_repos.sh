@@ -22,8 +22,8 @@ else
 fi
 
 # Create specified Git Root Path
-if [ -d "$path" ]; then
-    mkdir $path
+if [ -d "$git_path" ]; then
+    mkdir $git_path
 fi
 
 printf "\n"
