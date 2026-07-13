@@ -8,3 +8,4 @@ This repository contains a scripts & Ansible playbooks used for WSL configuratio
   
 For the Ansible playbook to succeed, you must first duplicate the vars_template.yml as vars.yml in the Ansible sub-directory, and populate the vars found in the template with the appropriete values.  
 
+---
