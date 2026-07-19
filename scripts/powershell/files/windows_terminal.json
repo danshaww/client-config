@@ -157,7 +157,11 @@
     {
         "defaults": 
         {
-            "colorScheme": "GitHub Dark (Web)",
+            "colorScheme": 
+            {
+                "dark": "VS Code Dark Modern",
+                "light": "VS Code Light Modern"
+            },
             "font": 
             {
                 "face": "JetBrainsMono Nerd Font",
@@ -215,95 +219,6 @@
     },
     "schemes": 
     [
-        {
-            // ─── GitHub Dark (Web Based) ──────────────────────────────────────────────
-            // Matches github.com dark mode / primer/github-vscode-theme "GitHub Dark Default"
-            // Colors verified against VS Code terminal rendering.
-            "name": "GitHub Dark (Web)",
- 
-            // Canvas — GitHub dark canvas, matches VS Code terminal panel bg
-            "background": "#0d1117",
-            "foreground": "#d2d5da",
- 
-            // Cursor & selection
-            "cursorColor": "#d2d5da",
-            "selectionBackground": "#264f78",
- 
-            // ── Standard ANSI colors ─────────────────────────────────────────────────
- 
-            // Black — used for borders/inactive UI; needs to be visible on dark bg
-            "black":         "#3b3f45",
-            "brightBlack":   "#6e7681",
- 
-            // Red — errors, [!] warning markers     (measured: #e64b4b → true ~#f47067)
-            "red":           "#f47067",
-            "brightRed":     "#ff9492",
- 
-            // Green — hostname in prompts, success  (measured: #2b7151 dim, #4dd18a bright)
-            // dim green used for bold hostname text, bright for prompt symbols
-            "green":         "#57ab5a",
-            "brightGreen":   "#4dd18a",
- 
-            // Yellow — timing/duration values       (measured: #f3f439 → very saturated)
-            // GitHub uses scale.yellow for warnings but oh-my-zsh time uses brightYellow
-            "yellow":        "#c9a227",
-            "brightYellow":  "#f2e073",
- 
-            // Blue — links, info text               (scale.blue.3 / .2)
-            "blue":          "#388bfd",
-            "brightBlue":    "#79c0ff",
- 
-            // Magenta — branch names, git refs      (measured: #d072d7 → true ~#c476c8)
-            // oh-my-zsh renders branch in magenta/purple
-            "purple":        "#c476c8",
-            "brightPurple":  "#d2a8ff",
- 
-            // Cyan — directory names in prompt      (measured: #4eb9dc → true ~#5ad6ff)
-            "cyan":          "#56b6c2",
-            "brightCyan":    "#5ad6ff",
- 
-            // White — primary foreground text
-            "white":         "#d2d5da",
-            "brightWhite":   "#e6edf3"
-        },
-        {
-            // ─── GitHub Light (Web Based) ─────────────────────────────────────────────
-            // Matches github.com light mode / primer/github-vscode-theme "GitHub Light Default"
-            "name": "GitHub Light (Web)",
- 
-            // Canvas
-            "background": "#ffffff",
-            "foreground": "#1f2328",
- 
-            // Cursor
-            "cursorColor": "#24292f",
-            "selectionBackground": "#b3d7ff",
- 
-            // ── Standard ANSI colors ─────────────────────────────────────────────────
-            "black":         "#24292f",
-            "brightBlack":   "#57606a",
- 
-            "red":           "#cf222e",
-            "brightRed":     "#a40e26",
- 
-            "green":         "#116329",
-            "brightGreen":   "#1a7f37",
- 
-            "yellow":        "#9a6700",
-            "brightYellow":  "#633c01",
- 
-            "blue":          "#0969da",
-            "brightBlue":    "#218bff",
- 
-            "purple":        "#8250df",
-            "brightPurple":  "#6639ba",
- 
-            "cyan":          "#1b7c83",
-            "brightCyan":    "#3192aa",
- 
-            "white":         "#6e7781",
-            "brightWhite":   "#24292f"
-        },
         {
             "background": "#000000",
             "black": "#1E1E1E",
