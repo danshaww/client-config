@@ -108,6 +108,12 @@ if [ -f ~/.oh_my_posh ]; then
     . ~/.oh_my_posh
 fi
 
+# Bitwarden secrets manager auth
+if [ -f ~/.bws_token ]; then
+    chmod 600 ~/.bws_token
+    export BWS_ACCESS_TOKEN=$(cat ~/.bws_token)
+fi
+
 # Aliases
 alias ll='ls -alF'
 alias la='ls -A'
