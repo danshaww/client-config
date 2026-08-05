@@ -1,4 +1,5 @@
-- name: Starship | Install
+- name: Global_System | Misc | Install Starship
   ansible.builtin.shell: curl -sS https://starship.rs/install.sh | sh -s -- -y
-  changed_when: false
+  args:
+    creates: /usr/local/bin/starship
   become: true
