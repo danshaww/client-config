@@ -200,6 +200,17 @@ rdp()
    title $USER@$HOSTNAME
 }
 
+code()
+{
+    if [ "$#" -gt 1 ]; then
+        for arg in "$@"; do
+            command code --new-window "$arg"
+        done
+    else
+        command code "$@"
+    fi
+}
+
 export EDITOR='code --wait -r'
 export PATH=$PATH:$HOME/.tfenv/bin
 # export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault
