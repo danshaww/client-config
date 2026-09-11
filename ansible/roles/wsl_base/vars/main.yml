@@ -24,7 +24,7 @@ packages:
   - unzip
   - xclip
   - ncdu
-  - wslu
+  # - wslu
 
 personal_devices:
   - dan-desktop
