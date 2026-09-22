@@ -2,7 +2,7 @@
 
 # Script to set up local repositories from Gitea instance
 git_directory=~/git
-git_repos=$(tea repo -f url -o simple)
+git_repos=$(tea repo search --archived=false  -f url -o simple)
 
 blue="\033[0;34m"
 white="\033[0m"
