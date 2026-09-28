@@ -167,8 +167,8 @@
         {
             "colorScheme": 
             {
-                "dark": "VS Code Dark Modern",
-                "light": "VS Code Light Modern"
+                "dark": "GitHub Dark",
+                "light": "GitHub Light"
             },
             "font": 
             {
@@ -225,8 +225,54 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
+        {
+            "name": "GitHub Dark",
+            "background": "#0d1117",
+            "foreground": "#d2d5da",
+            "cursorColor": "#d2d5da",
+            "selectionBackground": "#264f78",
+            "black":         "#3b3f45",
+            "brightBlack":   "#6e7681",
+            "red":           "#f47067",
+            "brightRed":     "#ff9492",
+            "green":         "#28a745",
+            "brightGreen":   "#4dd18a",
+            "yellow":        "#c9a227",
+            "brightYellow":  "#f2e073",
+            "blue":          "#388bfd",
+            "brightBlue":    "#79c0ff",
+            "purple":        "#c476c8",
+            "brightPurple":  "#d2a8ff",
+            "cyan":          "#56b6c2",
+            "brightCyan":    "#5ad6ff",
+            "white":         "#ffffff",
+            "brightWhite":   "#e6edf3"
+        },
+        {
+            "name": "GitHub Light",
+            "background": "#ffffff",
+            "foreground": "#1f2328",
+            "cursorColor": "#24292f",
+            "selectionBackground": "#b3d7ff",
+            "black":         "#24292f",
+            "brightBlack":   "#57606a",
+            "red":           "#cf222e",
+            "brightRed":     "#a40e26",
+            "green":         "#116329",
+            "brightGreen":   "#1a7f37",
+            "yellow":        "#9a6700",
+            "brightYellow":  "#633c01",
+            "blue":          "#0969da",
+            "brightBlue":    "#218bff",
+            "purple":        "#8250df",
+            "brightPurple":  "#6639ba",
+            "cyan":          "#1b7c83",
+            "brightCyan":    "#3192aa",
+            "white":         "#6e7781",
+            "brightWhite":   "#24292f"
+        },
         {
             "background": "#000000",
             "black": "#1E1E1E",
