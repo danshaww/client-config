@@ -7,19 +7,19 @@ full:
 	echo r | powershell.exe scripts/powershell/core.ps1
 	echo r | powershell.exe scripts/powershell/extended.ps1
 
-# Run WSL provisioning script
-wsl:
-	scripts/core.sh
-
 # Run Git provisioning script
 [no-cd]
 git:
 	scripts/repos.sh
 
-# Run Core Windows Provisioning
+# Run Core Provisioning (WSL & Windows)
 core:
 	scripts/core.sh
 	echo r | powershell.exe scripts/powershell/core.ps1
+
+# Run SSH Key Provisioning
+ssh:
+	scripts/ssh.sh
 
 # Run Extended Windows Provisioning script
 extended:

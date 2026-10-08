@@ -3,27 +3,7 @@
 # Bash script to install Ansible, clone other required repositories and execute Ansible WSL playbook.
 
 echo "Pulling changes before execution"
-git pull
-
-# Remove legacy config files
-if [ -f client-config.yml ]; then
-    rm client-config.yml
-    echo "Removed Client Config ln"
-fi
-if [ -f ~/.config/client-config.yml ]; then
-    rm ~/.config/client-config.yml
-    echo "Removed Client Config file"
-fi
-
-### Git Configuration
-# if ! git config --global user.name >/dev/null; then
-#     read -rp "Enter your Git Name: " git_name
-#     git config --global user.name "$git_name"
-# fi
-# if ! git config --global user.email >/dev/null; then
-#     read -rp "Enter your Git Email: " git_email
-#     git config --global user.email "$git_email"
-# fi
+# git pull
 
 ### Ansible installation
 if ! which ansible > /dev/null; then
@@ -35,9 +15,8 @@ fi
 # Execute Ansible Playbook
 
 cd ansible
-read -s -p "Enter sudo password: " sudo_password
-echo ""
-ansible-playbook playbook.yml -e pwd=$sudo_password -e ansible_sudo_pass=$sudo_password
+
+ansible-playbook playbooks/core_config.yml -e pwd=$sudo_password --ask-become-pass
 
 cd ../
 

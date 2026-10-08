@@ -7,19 +7,9 @@
 - name: Configure User
   ansible.builtin.include_tasks: user_config.yml
 
-- name: Configure SSH Keys
-  ansible.builtin.include_tasks: ssh_keys.yml
-  when:
-    - base.enable_ssh_key_config
-    - ansible_hostname in personal_devices
-
 - name: Configure Starship
   ansible.builtin.include_tasks: utils/starship.yml
   when: base.enable_starship
-
-- name: Install & Configure oh-my-posh
-  ansible.builtin.include_tasks: utils/oh_my_posh.yml
-  when: base.enable_oh_my_posh
 
 - name: Install Azure CLI
   ansible.builtin.include_tasks: utils/azure_cli.yml

@@ -1,4 +1,4 @@
-- name: WSL Configuration
+- name: Core Config
   hosts: localhost
   connection: local
   roles:
