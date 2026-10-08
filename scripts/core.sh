@@ -3,7 +3,7 @@
 # Bash script to install Ansible, clone other required repositories and execute Ansible WSL playbook.
 
 echo "Pulling changes before execution"
-# git pull
+git pull
 
 ### Ansible installation
 if ! which ansible > /dev/null; then
