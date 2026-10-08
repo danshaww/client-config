@@ -7,18 +7,3 @@
 - name: Configure User
   ansible.builtin.include_tasks: user_config.yml
 
-- name: Configure Starship
-  ansible.builtin.include_tasks: utils/starship.yml
-  when: base.enable_starship
-
-- name: Install Azure CLI
-  ansible.builtin.include_tasks: utils/azure_cli.yml
-  when: base.enable_az_cli
-
-- name: Install Terraform
-  ansible.builtin.include_tasks: utils/terraform.yml
-  when: base.enable_terraform
-
-- name: Install Docker
-  ansible.builtin.include_tasks: utils/docker.yml
-  when: base.enable_docker
