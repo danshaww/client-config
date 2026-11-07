@@ -1,0 +1,30 @@
+- name: SSH Config
+  hosts: localhost
+  connection: local
+  vars:
+    username: dan
+    ssh_private_key_url: https://files.epichouse.co.uk/software/SSH/id_rsa
+    ssh_public_key_url: https://files.epichouse.co.uk/software/SSH/id_rsa.pub
+  tasks:
+    - name: SSH | Create Directories
+      ansible.builtin.file:
+        path: "/home/{{ username }}/.ssh"
+        state: directory
+        mode: '0700'
+        owner: "{{ username }}"
+        group: "{{ username }}"
+
+    - name: SSH | Download Keys
+      ansible.builtin.get_url:
+        url: "{{ item.path }}"
+        dest: "/home/{{ username }}/.ssh"
+        mode: "{{ item.mode }}"
+        owner: "{{ username }}"
+        group: "{{ username }}"
+        url_username: "{{ username }}"
+        url_password: "{{ files_password }}"
+      with_items:
+        - path: "{{ ssh_private_key_url }}"
+          mode: 0600
+        - path: "{{ ssh_public_key_url }}"
+          mode: 0644
