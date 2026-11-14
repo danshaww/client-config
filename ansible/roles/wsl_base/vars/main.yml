@@ -1,0 +1,42 @@
+packages:
+  - ansible-lint
+  - bind9-dnsutils
+  - btop
+  - ca-certificates
+  - cifs-utils
+  - curl
+  - fio
+  - gh
+  - git
+  - git
+  - gnupg
+  - htop
+  - just
+  - net-tools
+  - nfs-common
+  - python3-passlib
+  - rsync
+  - sl
+  - software-properties-common
+  - stress
+  - tmux
+  - tree
+  - unzip
+  - xclip
+  - ncdu
+  - terraform
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+
+apt_sources:
+  - apt_key_url: https://download.docker.com/linux/ubuntu/gpg
+    keyring: /etc/apt/keyrings/docker.gpg
+    repo: deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu   jammy stable
+    filename: docker
+  - apt_key_url: https://apt.releases.hashicorp.com/gpg
+    keyring: /usr/share/keyrings/hashicorp-archive-keyring.gpg
+    repo: deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com jammy main
+    filename: hashicorp

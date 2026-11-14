@@ -1,0 +1,9 @@
+name: ittools
+networks: {}
+
+services:
+  web:
+    image: corentinth/it-tools
+    restart: unless-stopped
+    ports:
+      - 8099:80

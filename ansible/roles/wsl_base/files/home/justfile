@@ -1,0 +1,15 @@
+default:
+	just --list
+
+# List current dir using tree
+[no-cd]
+ls:
+	tree . -L 1
+
+#git
+git:
+	cd ~/git/client-config && ./scripts/repos.sh
+
+#wsl
+core:
+	cd ~/git/client-config && ./scripts/core.sh
