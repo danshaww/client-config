@@ -1,0 +1,7 @@
+galaxy_info:
+  author: Dan Shaw
+  description: Ansible role to provide base WSL client configuration.
+  min_ansible_version: "2.1"
+  license: GPL
+  galaxy_tags: []
+dependencies: []

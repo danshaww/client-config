@@ -1,0 +1,37 @@
+- name: User Config | Allow sudo without password
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/sudoers.d/{{ base.username }}"
+    line: "{{ base.username }} ALL=(ALL) NOPASSWD:ALL"
+    create: true
+    mode: '0644'
+
+- name: User Config | Copy home directory files
+  ansible.builtin.copy:
+    src: home/
+    dest: ~/
+    mode: '0755'
+
+- name: User Config | Copy Executables
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: ~/bin/
+    mode: '0755'
+  loop: "{{ lookup('ansible.builtin.fileglob', role_path ~ '/files/bin/*', wantlist=True) | reject('search', '/kubectl$') | list }}"
+
+- name: User Config | Remove bundled kubectl
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/bin/kubectl"
+    state: absent
+
+- name: User Config | Set Git Credential Helper
+  community.general.git_config:
+    name: credential.helper
+    scope: global
+    value: store
+
+- name: User Config | Create Git Directory
+  ansible.builtin.file:
+    path: "{{ base.git_directory }}"
+    state: directory
+    mode: '0755'

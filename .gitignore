@@ -1,0 +1,9 @@
+.vscode/
+.vscode/*
+
+temp/
+temp/*
+temp/*/*
+
+ansible/vars.yml
+client-config.yml

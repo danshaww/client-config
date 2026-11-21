@@ -1,0 +1,9 @@
+# - name: Vars Check
+#   ansible.builtin.include_tasks: vars_check.yml
+
+- name: Install Base Packages
+  ansible.builtin.include_tasks: package_installation.yml
+
+- name: Configure User
+  ansible.builtin.include_tasks: user_config.yml
+

@@ -1,0 +1,5 @@
+- name: Core Config
+  hosts: localhost
+  connection: local
+  roles:
+    - role: wsl_base
